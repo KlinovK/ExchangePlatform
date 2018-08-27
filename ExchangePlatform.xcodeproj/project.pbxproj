@@ -14,6 +14,7 @@
 		A9C0DE5021341AD40024C21A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9C0DE4F21341AD40024C21A /* Assets.xcassets */; };
 		A9C0DE5321341AD40024C21A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C0DE5121341AD40024C21A /* LaunchScreen.storyboard */; };
 		A9C0DE602134617B0024C21A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9C0DE5F2134617B0024C21A /* GoogleService-Info.plist */; };
+		A9C0DE62213463DB0024C21A /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0DE61213463DB0024C21A /* DataService.swift */; };
 		D7EAB019BEA1462562139A80 /* Pods_ExchangePlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62D9CD68AB6CC6A9A693F63 /* Pods_ExchangePlatform.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		A9C0DE5221341AD40024C21A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9C0DE5421341AD40024C21A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9C0DE5F2134617B0024C21A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A9C0DE61213463DB0024C21A /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		B62D9CD68AB6CC6A9A693F63 /* Pods_ExchangePlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExchangePlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -130,6 +132,7 @@
 		A9C0DE5E21341B7B0024C21A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A9C0DE61213463DB0024C21A /* DataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				A9C0DE4B21341ACF0024C21A /* SecondViewController.swift in Sources */,
 				A9C0DE4721341ACF0024C21A /* AppDelegate.swift in Sources */,
 				A9C0DE4921341ACF0024C21A /* FirstViewController.swift in Sources */,
+				A9C0DE62213463DB0024C21A /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
