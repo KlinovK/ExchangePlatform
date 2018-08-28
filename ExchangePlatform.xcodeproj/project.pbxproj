@@ -15,6 +15,10 @@
 		A9C0DE5321341AD40024C21A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C0DE5121341AD40024C21A /* LaunchScreen.storyboard */; };
 		A9C0DE602134617B0024C21A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9C0DE5F2134617B0024C21A /* GoogleService-Info.plist */; };
 		A9C0DE62213463DB0024C21A /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0DE61213463DB0024C21A /* DataService.swift */; };
+		A9C0DE642135605C0024C21A /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0DE632135605C0024C21A /* SignInVC.swift */; };
+		A9C0DE662135609B0024C21A /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0DE652135609B0024C21A /* SignUpVC.swift */; };
+		A9C0DE68213560F10024C21A /* InsetTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0DE67213560F10024C21A /* InsetTextField.swift */; };
+		A9C0DE6A213577070024C21A /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0DE69213577060024C21A /* ShadowView.swift */; };
 		D7EAB019BEA1462562139A80 /* Pods_ExchangePlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62D9CD68AB6CC6A9A693F63 /* Pods_ExchangePlatform.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +35,10 @@
 		A9C0DE5421341AD40024C21A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9C0DE5F2134617B0024C21A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A9C0DE61213463DB0024C21A /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		A9C0DE632135605C0024C21A /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		A9C0DE652135609B0024C21A /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		A9C0DE67213560F10024C21A /* InsetTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetTextField.swift; sourceTree = "<group>"; };
+		A9C0DE69213577060024C21A /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		B62D9CD68AB6CC6A9A693F63 /* Pods_ExchangePlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExchangePlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -104,6 +112,8 @@
 			children = (
 				A9C0DE4A21341ACF0024C21A /* SecondViewController.swift */,
 				A9C0DE4821341ACF0024C21A /* FirstViewController.swift */,
+				A9C0DE632135605C0024C21A /* SignInVC.swift */,
+				A9C0DE652135609B0024C21A /* SignUpVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -111,6 +121,8 @@
 		A9C0DE5B21341B300024C21A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A9C0DE67213560F10024C21A /* InsetTextField.swift */,
+				A9C0DE69213577060024C21A /* ShadowView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -260,6 +272,10 @@
 				A9C0DE4721341ACF0024C21A /* AppDelegate.swift in Sources */,
 				A9C0DE4921341ACF0024C21A /* FirstViewController.swift in Sources */,
 				A9C0DE62213463DB0024C21A /* DataService.swift in Sources */,
+				A9C0DE6A213577070024C21A /* ShadowView.swift in Sources */,
+				A9C0DE662135609B0024C21A /* SignUpVC.swift in Sources */,
+				A9C0DE68213560F10024C21A /* InsetTextField.swift in Sources */,
+				A9C0DE642135605C0024C21A /* SignInVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
