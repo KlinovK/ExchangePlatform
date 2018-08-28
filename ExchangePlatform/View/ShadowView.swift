@@ -16,19 +16,21 @@ class ShadowView: UIButton {
     
     func setUpView(){
         
-        self.layer.shadowOpacity = 0.75
+        //MARK: Custom shadow
+        
+        self.layer.shadowOpacity = 1
         self.layer.shadowRadius = 10
         self.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         
-        let contactShadowSize: CGFloat = 10
-
+        //MARK: Bottom shadow
         
-        let shadowPath = CGPath(ellipseIn: CGRect(x: -contactShadowSize,
-                                                  y: -contactShadowSize * 0.5,
+        let contactShadowSize: CGFloat = 10
+        
+        let shadowPath = CGPath(ellipseIn: CGRect(x: contactShadowSize,
+                                                  y: contactShadowSize * 6,
                                                   width: layer.bounds.width + contactShadowSize * 2,
                                                   height: contactShadowSize),
                                 transform: nil)
-        
         
         
         self.layer.shadowPath = shadowPath
