@@ -20,6 +20,7 @@
 		A9C0DE68213560F10024C21A /* InsetTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0DE67213560F10024C21A /* InsetTextField.swift */; };
 		A9C0DE6A213577070024C21A /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0DE69213577060024C21A /* ShadowView.swift */; };
 		A9C0DE6C21358FA20024C21A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0DE6B21358FA20024C21A /* AuthService.swift */; };
+		A9C0DE6E213AAF120024C21A /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0DE6D213AAF120024C21A /* MeVC.swift */; };
 		D7EAB019BEA1462562139A80 /* Pods_ExchangePlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62D9CD68AB6CC6A9A693F63 /* Pods_ExchangePlatform.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		A9C0DE67213560F10024C21A /* InsetTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetTextField.swift; sourceTree = "<group>"; };
 		A9C0DE69213577060024C21A /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		A9C0DE6B21358FA20024C21A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		A9C0DE6D213AAF120024C21A /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
 		B62D9CD68AB6CC6A9A693F63 /* Pods_ExchangePlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExchangePlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -116,6 +118,7 @@
 				A9C0DE4821341ACF0024C21A /* FeedVC.swift */,
 				A9C0DE632135605C0024C21A /* SignInVC.swift */,
 				A9C0DE652135609B0024C21A /* SignUpVC.swift */,
+				A9C0DE6D213AAF120024C21A /* MeVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9C0DE4B21341ACF0024C21A /* OrdersVC.swift in Sources */,
+				A9C0DE6E213AAF120024C21A /* MeVC.swift in Sources */,
 				A9C0DE4721341ACF0024C21A /* AppDelegate.swift in Sources */,
 				A9C0DE4921341ACF0024C21A /* FeedVC.swift in Sources */,
 				A9C0DE6C21358FA20024C21A /* AuthService.swift in Sources */,
