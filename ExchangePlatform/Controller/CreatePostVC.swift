@@ -20,6 +20,9 @@ class CreatePostVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         textField.delegate = self
+        sendBtn.bindToKeyboard()
+        profileImg.bindToKeyboard()
+        textField.bindToKeyboard()
         
 
     }
