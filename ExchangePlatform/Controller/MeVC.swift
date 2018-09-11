@@ -66,7 +66,7 @@ extension MeVC: UITableViewDelegate, UITableViewDataSource {
         }
         
         
-        let image = UIImage(named: "default")
+        let image = UIImage(named: "user")
         let message = messageArray[indexPath.row]
         
         DataService.instance.getUserName(forUID: message.senderID) { (returnedUserName) in
