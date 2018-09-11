@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignInVC: UIViewController {
 
@@ -18,6 +19,13 @@ class SignInVC: UIViewController {
 
         emailField.delegate = self
         passwordField.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if Auth.auth().currentUser != nil {
+            dismiss(animated: true, completion: nil)
+        }
     }
 
     @IBAction func signUpBtnWasPressed(_ sender: Any) {

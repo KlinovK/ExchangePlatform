@@ -21,10 +21,15 @@ class CreatePostVC: UIViewController {
         super.viewDidLoad()
         textField.delegate = self
         sendBtn.bindToKeyboard()
-        profileImg.bindToKeyboard()
-        textField.bindToKeyboard()
+      //  profileImg.bindToKeyboard()
+       // textField.bindToKeyboard()
         
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.emailLbl.text = Auth.auth().currentUser?.email
     }
 
     @IBAction func sendMessageWasPressed(_ sender: Any) {
@@ -51,6 +56,5 @@ class CreatePostVC: UIViewController {
 extension CreatePostVC: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         textView.text = ""
-        
     }
 }

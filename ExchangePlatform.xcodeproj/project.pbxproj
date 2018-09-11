@@ -24,6 +24,7 @@
 		A9C0DE70213E997C0024C21A /* CreatePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0DE6F213E997C0024C21A /* CreatePostVC.swift */; };
 		A9C0DE72213EA13A0024C21A /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0DE71213EA13A0024C21A /* UIViewExt.swift */; };
 		A9C0DE74213EB7650024C21A /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0DE73213EB7650024C21A /* FeedCell.swift */; };
+		A9C0DE76213EBC240024C21A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0DE75213EBC240024C21A /* Message.swift */; };
 		D7EAB019BEA1462562139A80 /* Pods_ExchangePlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62D9CD68AB6CC6A9A693F63 /* Pods_ExchangePlatform.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		A9C0DE6F213E997C0024C21A /* CreatePostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostVC.swift; sourceTree = "<group>"; };
 		A9C0DE71213EA13A0024C21A /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		A9C0DE73213EB7650024C21A /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		A9C0DE75213EBC240024C21A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		B62D9CD68AB6CC6A9A693F63 /* Pods_ExchangePlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExchangePlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -143,6 +145,7 @@
 		A9C0DE5C21341B3B0024C21A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A9C0DE75213EBC240024C21A /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -158,8 +161,8 @@
 		A9C0DE5E21341B7B0024C21A /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				A9C0DE61213463DB0024C21A /* DataService.swift */,
 				A9C0DE6B21358FA20024C21A /* AuthService.swift */,
+				A9C0DE61213463DB0024C21A /* DataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				A9C0DE662135609B0024C21A /* SignUpVC.swift in Sources */,
 				A9C0DE68213560F10024C21A /* InsetTextField.swift in Sources */,
 				A9C0DE642135605C0024C21A /* SignInVC.swift in Sources */,
+				A9C0DE76213EBC240024C21A /* Message.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         FirebaseApp.configure()
         
         if Auth.auth().currentUser == nil {
@@ -24,9 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.makeKeyAndVisible()
             window?.rootViewController?.present(signInVC, animated: true, completion: nil)
         }
-        
-        
-        
         return true
     }
 
