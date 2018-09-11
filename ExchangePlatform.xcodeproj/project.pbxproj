@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A996F72E2147EBDF008C0E20 /* MyTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A996F72D2147EBDF008C0E20 /* MyTableCell.swift */; };
 		A9C0DE4721341ACF0024C21A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0DE4621341ACF0024C21A /* AppDelegate.swift */; };
 		A9C0DE4921341ACF0024C21A /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0DE4821341ACF0024C21A /* FeedVC.swift */; };
 		A9C0DE4B21341ACF0024C21A /* OrdersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0DE4A21341ACF0024C21A /* OrdersVC.swift */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		85B0B531CD8A84EE66C658D7 /* Pods-ExchangePlatform.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangePlatform.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangePlatform/Pods-ExchangePlatform.debug.xcconfig"; sourceTree = "<group>"; };
 		8BBBFEF2E8B131C8A1A29001 /* Pods-ExchangePlatform.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangePlatform.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangePlatform/Pods-ExchangePlatform.release.xcconfig"; sourceTree = "<group>"; };
+		A996F72D2147EBDF008C0E20 /* MyTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableCell.swift; sourceTree = "<group>"; };
 		A9C0DE4321341ACF0024C21A /* ExchangePlatform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangePlatform.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C0DE4621341ACF0024C21A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9C0DE4821341ACF0024C21A /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
@@ -122,12 +124,12 @@
 		A9C0DE5A21341B1F0024C21A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A9C0DE4A21341ACF0024C21A /* OrdersVC.swift */,
+				A9C0DE6D213AAF120024C21A /* MeVC.swift */,
 				A9C0DE4821341ACF0024C21A /* FeedVC.swift */,
 				A9C0DE632135605C0024C21A /* SignInVC.swift */,
-				A9C0DE652135609B0024C21A /* SignUpVC.swift */,
-				A9C0DE6D213AAF120024C21A /* MeVC.swift */,
 				A9C0DE6F213E997C0024C21A /* CreatePostVC.swift */,
+				A9C0DE4A21341ACF0024C21A /* OrdersVC.swift */,
+				A9C0DE652135609B0024C21A /* SignUpVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -138,6 +140,7 @@
 				A9C0DE67213560F10024C21A /* InsetTextField.swift */,
 				A9C0DE69213577060024C21A /* ShadowView.swift */,
 				A9C0DE73213EB7650024C21A /* FeedCell.swift */,
+				A996F72D2147EBDF008C0E20 /* MyTableCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				A9C0DE4921341ACF0024C21A /* FeedVC.swift in Sources */,
 				A9C0DE6C21358FA20024C21A /* AuthService.swift in Sources */,
 				A9C0DE62213463DB0024C21A /* DataService.swift in Sources */,
+				A996F72E2147EBDF008C0E20 /* MyTableCell.swift in Sources */,
 				A9C0DE6A213577070024C21A /* ShadowView.swift in Sources */,
 				A9C0DE70213E997C0024C21A /* CreatePostVC.swift in Sources */,
 				A9C0DE662135609B0024C21A /* SignUpVC.swift in Sources */,
