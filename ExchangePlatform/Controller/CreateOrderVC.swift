@@ -21,6 +21,9 @@ class CreateOrderVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.delegate = self
+        tableView.dataSource = self
+        
     }
 
 
@@ -31,4 +34,23 @@ class CreateOrderVC: UIViewController {
     }
     
 
+}
+
+extension CreateOrderVC: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "userCell") as? UserCell else {return UITableViewCell()}
+       let profileImage = UIImage(named: "user")
+        cell.configureCell(profileImage: profileImage!, email: "random@gmail.com", isSelected: true)
+        return cell
+    }
+    
 }
