@@ -16,7 +16,6 @@ class SignInVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         emailField.delegate = self
         passwordField.delegate = self
     }
@@ -43,18 +42,18 @@ class SignInVC: UIViewController {
                     print(String(describing: loginError?.localizedDescription))
                 }
                 
-                AuthService.instance.registerUser(withEmail: self.emailField.text!, andPassword: self.passwordField.text!, userCreationComplete: { (success, registrationError) in
-                    if success {
-                        AuthService.instance.loginUser(withEmail: self.emailField.text!, andPassword: self.passwordField.text!, userLoginComplete: { (success, nil) in
-                            self.dismiss(animated: true, completion: nil)
-                            print("Success registration of user")
-                        })
-                    } else {
-                        print(String(describing: loginError?.localizedDescription))
-                    }
-                })
-            }
-        }
+//                AuthService.instance.registerUser(withEmail: self.emailField.text!, andPassword: self.passwordField.text!, userCreationComplete: { (success, registrationError) in
+//                    if success {
+//                        AuthService.instance.loginUser(withEmail: self.emailField.text!, andPassword: self.passwordField.text!, userLoginComplete: { (success, nil) in
+//                            self.dismiss(animated: true, completion: nil)
+//                            print("Success registration of user")
+//                        })
+//                    } else {
+//                        print(String(describing: loginError?.localizedDescription))
+//                    }
+//                })
+           }
+       }
     }
     
 }

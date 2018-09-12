@@ -127,9 +127,9 @@
 				A9C0DE6D213AAF120024C21A /* MeVC.swift */,
 				A9C0DE4821341ACF0024C21A /* FeedVC.swift */,
 				A9C0DE632135605C0024C21A /* SignInVC.swift */,
+				A9C0DE652135609B0024C21A /* SignUpVC.swift */,
 				A9C0DE6F213E997C0024C21A /* CreatePostVC.swift */,
 				A9C0DE4A21341ACF0024C21A /* OrdersVC.swift */,
-				A9C0DE652135609B0024C21A /* SignUpVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

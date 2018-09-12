@@ -649,6 +649,9 @@
                                         <state key="normal" title="SIGN UP">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signUpBtnWasPressed:" destination="NXT-6n-DHB" eventType="touchUpInside" id="hOs-xt-U8s"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -670,6 +673,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="F0v-Hd-i1Q"/>
                     </view>
+                    <connections>
+                        <outlet property="addressLbl" destination="BvB-2R-Ica" id="CrO-aM-O6q"/>
+                        <outlet property="companyNameLbl" destination="ghe-p7-ch4" id="X1S-tD-mrz"/>
+                        <outlet property="emailLbl" destination="vMA-l2-Pwh" id="1ho-Ee-7Xw"/>
+                        <outlet property="passwordLbl" destination="yAm-iQ-Pjb" id="58t-db-GQB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F3u-L7-0v3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
