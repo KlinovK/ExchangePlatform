@@ -36,12 +36,12 @@ class SignUpVC: UIViewController {
                                     print("Success registration of user")
                                 })
                             } else {
-
+                                print("Fail registration")
                             }
                         })
-        }
-    }
-}
+                    }
+                }
+            }
 
 
     

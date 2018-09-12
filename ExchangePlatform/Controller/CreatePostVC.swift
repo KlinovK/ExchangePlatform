@@ -35,7 +35,7 @@ class CreatePostVC: UIViewController {
     @IBAction func sendMessageWasPressed(_ sender: Any) {
         if textField.text != nil && textField.text != "Say something here..." {
             sendBtn.isEnabled = false
-            DataService.instance.uploadPost(withMessage: textField.text, forUID: (Auth.auth().currentUser?.uid)!, withGroupKey: nil) { (isComplete) in
+            DataService.instance.uploadPost(withMessage: textField.text, forUID: (Auth.auth().currentUser?.uid)!, withOrderKey: nil) { (isComplete) in
                 if isComplete {
                     self.sendBtn.isEnabled = true
                     self.dismiss(animated: true, completion: nil)
