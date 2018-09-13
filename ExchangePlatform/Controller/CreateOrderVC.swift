@@ -16,9 +16,10 @@ class CreateOrderVC: UIViewController {
     @IBOutlet weak var numberTxtField: InsetTextField!
     @IBOutlet weak var descriptionTxtField: InsetTextField!
     @IBOutlet weak var doneBtn: UIButton!
-    @IBOutlet weak var orderMemeberLbl: UILabel!
     
+    @IBOutlet weak var orderMemberLbl: UILabel!
     var emailArray = [String]()
+    var choosenUserArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,11 @@ class CreateOrderVC: UIViewController {
         emailSearchTxtField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        doneBtn.isHidden = true
+    }
+    
     @objc func textFieldDidChange(){
         if emailSearchTxtField.text == "" {
             emailArray = []
@@ -64,8 +70,32 @@ extension CreateOrderVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "userCell") as? UserCell else {return UITableViewCell()}
        let profileImage = UIImage(named: "user")
-        cell.configureCell(profileImage: profileImage!, email: emailArray[indexPath.row], isSelected: true)
+        if choosenUserArray.contains(emailArray[indexPath.row]) {
+            cell.configureCell(profileImage: profileImage!, email: emailArray[indexPath.row], isSelected: true)
+
+        } else {
+            cell.configureCell(profileImage: profileImage!, email: emailArray[indexPath.row], isSelected: false)
+
+        }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? UserCell else {return}
+        if !choosenUserArray.contains(cell.emailLbl.text!) {
+            choosenUserArray.append(cell.emailLbl.text!)
+            orderMemberLbl.text = choosenUserArray.joined(separator: ", ")
+            doneBtn.isHidden = false
+        } else {
+            choosenUserArray = choosenUserArray.filter({ $0 != cell.emailLbl.text! })
+            if choosenUserArray.count >= 1 {
+                orderMemberLbl.text = choosenUserArray.joined(separator: ", ")
+            } else {
+                
+                orderMemberLbl.text = "Add people to your order."
+                doneBtn.isHidden = true
+            }
+        }
     }
     
 }
