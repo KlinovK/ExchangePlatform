@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class CreateOrderVC: UIViewController {
 
@@ -16,8 +17,8 @@ class CreateOrderVC: UIViewController {
     @IBOutlet weak var numberTxtField: InsetTextField!
     @IBOutlet weak var descriptionTxtField: InsetTextField!
     @IBOutlet weak var doneBtn: UIButton!
-    
     @IBOutlet weak var orderMemberLbl: UILabel!
+    
     var emailArray = [String]()
     var choosenUserArray = [String]()
     
@@ -48,6 +49,20 @@ class CreateOrderVC: UIViewController {
     }
 
     @IBAction func doneBtnWasPressed(_ sender: Any) {
+        if numberTxtField.text != "" && descriptionTxtField.text != "" {
+            DataService.instance.getIDs(forUsernames: choosenUserArray) { (idsArray) in
+                var userIds = idsArray
+                userIds.append((Auth.auth().currentUser?.uid)!)
+                
+                DataService.instance.createOrder(withNumber: self.numberTxtField.text!, andDescription: self.descriptionTxtField.text!, forUserIDs: userIds, handler: { (orderCreated) in
+                    if orderCreated {
+                        self.dismiss(animated: true, completion: nil)
+                    } else {
+                        print("Order could not be created. Please try again.")
+                    }
+                })
+            }
+        }
     }
     
     @IBAction func closeBtnWasPressed(_ sender: Any) {
@@ -57,7 +72,7 @@ class CreateOrderVC: UIViewController {
 
 }
 
-extension CreateOrderVC: UITableViewDelegate, UITableViewDataSource {
+extension CreateOrderVC: UITableViewDelegate, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -68,20 +83,19 @@ extension CreateOrderVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "userCell") as? UserCell else {return UITableViewCell()}
-       let profileImage = UIImage(named: "user")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "userCell") as? UserCell else { return UITableViewCell() }
+        let profileImage = UIImage(named: "user")
         if choosenUserArray.contains(emailArray[indexPath.row]) {
-            cell.configureCell(profileImage: profileImage!, email: emailArray[indexPath.row], isSelected: true)
-
+            cell.configureCell(profileImage: profileImage!, email: emailArray[indexPath.row] , isSelected: true)
         } else {
-            cell.configureCell(profileImage: profileImage!, email: emailArray[indexPath.row], isSelected: false)
-
+            cell.configureCell(profileImage: profileImage!, email: emailArray[indexPath.row] , isSelected: false)
         }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let cell = tableView.cellForRow(at: indexPath) as? UserCell else {return}
+        guard let cell = tableView.cellForRow(at: indexPath) as? UserCell else { return }
         if !choosenUserArray.contains(cell.emailLbl.text!) {
             choosenUserArray.append(cell.emailLbl.text!)
             orderMemberLbl.text = choosenUserArray.joined(separator: ", ")
@@ -91,14 +105,15 @@ extension CreateOrderVC: UITableViewDelegate, UITableViewDataSource {
             if choosenUserArray.count >= 1 {
                 orderMemberLbl.text = choosenUserArray.joined(separator: ", ")
             } else {
-                
-                orderMemberLbl.text = "Add people to your order."
+                orderMemberLbl.text = "add people to your order"
                 doneBtn.isHidden = true
             }
         }
     }
     
+    
 }
+
 extension CreateOrderVC: UITextFieldDelegate {
     
 }
