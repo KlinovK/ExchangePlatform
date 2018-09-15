@@ -118,6 +118,25 @@ class DataService {
         handler(true)
     }
     
+    func getAllOrders(handler: @escaping(_ ordersArray: [Order]) -> ()){
+        var ordersArray = [Order]()
+        REF_ORDERS.observeSingleEvent(of: .value) { (orderSnapshot) in
+            guard let orderSnapshot = orderSnapshot.children.allObjects as? [DataSnapshot] else {return}
+            for order in orderSnapshot {
+                let memberArray = order.childSnapshot(forPath: "ids").value as! [String]
+                if memberArray.contains((Auth.auth().currentUser?.uid)!) {
+                    let number = order.childSnapshot(forPath: "number").value as! String
+                    let description = order.childSnapshot(forPath: "description").value as! String
+                    let order = Order(number: number, description: description, key: order.key, members: memberArray, memberCount: memberArray.count)
+                    ordersArray.append(order)
+                }
+                
+            }
+            handler(ordersArray)
+        }
+    }
+    
+    
 }
 
 
