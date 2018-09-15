@@ -390,7 +390,7 @@
         <!--Orders-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="OrdersVC" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="OrdersVC" customModule="ExchangePlatform" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -429,13 +429,52 @@
                                 <rect key="frame" x="0.0" y="140" width="834" height="923"/>
                                 <color key="backgroundColor" red="0.31764705879999999" green="0.64313725489999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="f01-ur-I8N">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="orderCell" rowHeight="100" id="f01-ur-I8N" customClass="OrderCell" customModule="ExchangePlatform" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="834" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f01-ur-I8N" id="NdG-ps-oCH">
                                             <rect key="frame" x="0.0" y="0.0" width="834" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0F-PB-zaF">
+                                                    <rect key="frame" x="23" y="11" width="788" height="27.5"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="uqo-6u-4B7">
+                                                    <rect key="frame" x="30" y="46.5" width="774" height="49"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="gGe-Ru-kes">
+                                                            <rect key="frame" x="0.0" y="0.0" width="774" height="22"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="members" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="QF8-eP-p8K">
+                                                            <rect key="frame" x="0.0" y="27" width="774" height="22"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="uqo-6u-4B7" secondAttribute="trailing" constant="15" id="0bK-Fs-DHr"/>
+                                                <constraint firstItem="uqo-6u-4B7" firstAttribute="top" secondItem="M0F-PB-zaF" secondAttribute="bottom" constant="8" id="4MP-qO-XTQ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="M0F-PB-zaF" secondAttribute="trailing" constant="8" id="e4g-UT-0PY"/>
+                                                <constraint firstItem="M0F-PB-zaF" firstAttribute="top" secondItem="NdG-ps-oCH" secondAttribute="topMargin" id="hqh-XR-Cma"/>
+                                                <constraint firstItem="M0F-PB-zaF" firstAttribute="leading" secondItem="NdG-ps-oCH" secondAttribute="leadingMargin" constant="8" id="pp4-Ys-nLT"/>
+                                                <constraint firstItem="uqo-6u-4B7" firstAttribute="leading" secondItem="NdG-ps-oCH" secondAttribute="leadingMargin" constant="15" id="qxy-6e-55l"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.31764705882352939" green="0.64313725490196072" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="memberCountLbl" destination="QF8-eP-p8K" id="ivw-VR-N5x"/>
+                                            <outlet property="orderDescriptionLbl" destination="gGe-Ru-kes" id="Rj6-6t-Wz2"/>
+                                            <outlet property="orderNumberLbl" destination="M0F-PB-zaF" id="vLf-1G-j39"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -453,6 +492,9 @@
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Orders" image="shipped" selectedImage="shipped" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="tableView" destination="R77-90-ePK" id="jAF-Pb-oBb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
