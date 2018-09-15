@@ -76,6 +76,7 @@ class DataService {
     func uploadPost(withMessage message: String, forUID uid: String, withOrderKey orderKey: String?, sendComlete: @escaping(_ status: Bool) -> ()) {
         if orderKey != nil {
             REF_ORDERS.child(orderKey!).child("messages").childByAutoId().updateChildValues(["content": message, "senderID": uid])
+            sendComlete(true)
         } else {
             REF_FEED.childByAutoId().updateChildValues(["content": message, "senderID": uid])
             sendComlete(true)
@@ -99,7 +100,19 @@ class DataService {
         }
     }
     
-    
+    func getAllMessagesFor(desiredOrder: Order, handler: @escaping(_ messagesArray: [Message]) -> ()){
+        var groupMessageArray = [Message]()
+        REF_ORDERS.child(desiredOrder.key).child("messages").observeSingleEvent(of: .value) { (orderMessageSnapshot) in
+            guard let orderMessageSnapshot = orderMessageSnapshot.children.allObjects as? [DataSnapshot] else {return}
+            for orderMessage in orderMessageSnapshot {
+                let content = orderMessage.childSnapshot(forPath: "content").value as! String
+                let senderID = orderMessage.childSnapshot(forPath: "senderID").value as! String
+                let message = Message(content: content, senderID: senderID)
+                groupMessageArray.append(message)
+            }
+            handler(groupMessageArray)
+        }
+    }
     
     func getEmail(forSearchQuery query: String, handler: @escaping (_ emailArray: [String]) -> ()){
         var emailArray = [String]()
