@@ -19,12 +19,28 @@ class OrderFeedVC: UIViewController {
     @IBOutlet weak var messageTxtField: InsetTextField!
     @IBOutlet weak var membersLbl: UILabel!
     
+    var order: Order?
+    
+    
+    func initData(forOrder order: Order){
+        self.order = order
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         sendBtnView.bindToKeyboard()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        orderNumberLbl.text = order?.orderTitle
+        DataService.instance.getEmailFor(order: order!) { (returnedEmails) in
+            self.membersLbl.text = returnedEmails.joined(separator: ", ")
+
+        }
+        
+    }
+    
     @IBAction func backBtnWasPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

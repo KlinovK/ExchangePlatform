@@ -390,7 +390,7 @@
         <!--Order FeedVC-->
         <scene sceneID="YvP-7U-LZW">
             <objects>
-                <viewController id="fbz-Tf-njr" customClass="OrderFeedVC" customModule="ExchangePlatform" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OrderFeedVC" id="fbz-Tf-njr" customClass="OrderFeedVC" customModule="ExchangePlatform" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GFT-mj-I7i">
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

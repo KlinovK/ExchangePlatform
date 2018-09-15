@@ -57,11 +57,25 @@ class DataService {
         }
     }
     
+    func getEmailFor(order: Order, handler: @escaping(_ emails: [String]) -> () ) {
+        var emailArray = [String]()
+        REF_USERS.observeSingleEvent(of: .value) { (userSnapshot) in
+            guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else {return}
+            for user in userSnapshot {
+                if order.members.contains(user.key) {
+                    let email = user.childSnapshot(forPath: "email").value as! String
+                    emailArray.append(email)
+                }
+            }
+            handler(emailArray)
+        }
+    }
+    
     //Upload post to Feed
     
     func uploadPost(withMessage message: String, forUID uid: String, withOrderKey orderKey: String?, sendComlete: @escaping(_ status: Bool) -> ()) {
         if orderKey != nil {
-            //send to groups ref
+            REF_ORDERS.child(orderKey!).child("messages").childByAutoId().updateChildValues(["content": message, "senderID": uid])
         } else {
             REF_FEED.childByAutoId().updateChildValues(["content": message, "senderID": uid])
             sendComlete(true)
@@ -84,6 +98,8 @@ class DataService {
             handler(messageArray)
         }
     }
+    
+    
     
     func getEmail(forSearchQuery query: String, handler: @escaping (_ emailArray: [String]) -> ()){
         var emailArray = [String]()

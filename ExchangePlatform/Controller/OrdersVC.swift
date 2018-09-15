@@ -49,5 +49,11 @@ extension OrdersVC: UITableViewDelegate, UITableViewDataSource {
         cell.configureCell(number: order.orderTitle, description: order.description , memberCount: order.memberCount)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let orderFeedVC = storyboard?.instantiateViewController(withIdentifier: "OrderFeedVC") as? OrderFeedVC else {return}
+        orderFeedVC.initData(forOrder: ordersArray[indexPath.row])
+        present(orderFeedVC, animated: true, completion: nil)
+    }
 }
 
