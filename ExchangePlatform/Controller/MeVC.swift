@@ -13,7 +13,6 @@ class MeVC: UIViewController {
 
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var emailLbl: UILabel!
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var myTableView: UITableView!
     
     var messageArray: [Message] = [Message]()
@@ -26,7 +25,9 @@ class MeVC: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         self.emailLbl.text = Auth.auth().currentUser?.email
+        
         DataService.instance.getAllFeedMessages { (returnMessagesArray) in
             self.messageArray = returnMessagesArray.reversed()
             self.myTableView.reloadData()

@@ -15,6 +15,8 @@ class Order {
     private var _key: String
     private var _memberCount: Int
     private var _members: [String]
+    private var _fromAddress: String
+    private var _toAddress: String
 
 
     var orderTitle: String {
@@ -37,13 +39,23 @@ class Order {
         return _members
     }
     
+    var fromAddress: String {
+        return _fromAddress
+    }
+    
+    var toAddress: String {
+        return _toAddress
+    }
+    
 
-    init(number: String, description: String, key: String, members: [String], memberCount: Int) {
+    init(number: String, description: String, key: String, members: [String], memberCount: Int, fromAddress: String, toAddress: String) {
         self._orderNumber = number
         self._description = description
         self._key = key
         self._memberCount = memberCount
         self._members = members
+        self._fromAddress = fromAddress
+        self._toAddress = toAddress
     }
     
 }

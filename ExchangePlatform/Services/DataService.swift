@@ -142,8 +142,8 @@ class DataService {
             handler(idArray)
         }
     }
-    func createOrder(withNumber number: String, andDescription description: String, forUserIDs ids: [String], handler: @escaping(_ orderCreated: Bool) -> ()){
-        REF_ORDERS.childByAutoId().updateChildValues(["number": number, "description": description, "ids": ids])
+    func createOrder(withNumber number: String, andDescription description: String, forUserIDs ids: [String], fromAddress: String, toAddress: String, handler: @escaping(_ orderCreated: Bool) -> ()){
+        REF_ORDERS.childByAutoId().updateChildValues(["number": number, "description": description, "ids": ids, "fromAddress": fromAddress, "toAddress": toAddress])
         handler(true)
     }
     
@@ -156,7 +156,9 @@ class DataService {
                 if memberArray.contains((Auth.auth().currentUser?.uid)!) {
                     let number = order.childSnapshot(forPath: "number").value as! String
                     let description = order.childSnapshot(forPath: "description").value as! String
-                    let order = Order(number: number, description: description, key: order.key, members: memberArray, memberCount: memberArray.count)
+                    let fromAddress = order.childSnapshot(forPath: "fromAddress").value as! String
+                    let toAddress = order.childSnapshot(forPath: "toAddress").value as! String
+                    let order = Order(number: number, description: description, key: order.key, members: memberArray, memberCount: memberArray.count, fromAddress: fromAddress, toAddress: toAddress )
                     ordersArray.append(order)
                 }
                 

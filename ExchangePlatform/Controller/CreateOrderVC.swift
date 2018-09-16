@@ -18,6 +18,8 @@ class CreateOrderVC: UIViewController {
     @IBOutlet weak var descriptionTxtField: InsetTextField!
     @IBOutlet weak var doneBtn: UIButton!
     @IBOutlet weak var orderMemberLbl: UILabel!
+    @IBOutlet weak var fromAddressTextField: InsetTextField!
+    @IBOutlet weak var toAddressTextField: InsetTextField!
     
     var emailArray = [String]()
     var choosenUserArray = [String]()
@@ -29,6 +31,7 @@ class CreateOrderVC: UIViewController {
         tableView.dataSource = self
         emailSearchTxtField.delegate = self
         emailSearchTxtField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -49,12 +52,12 @@ class CreateOrderVC: UIViewController {
     }
 
     @IBAction func doneBtnWasPressed(_ sender: Any) {
-        if numberTxtField.text != "" && descriptionTxtField.text != "" {
+        if numberTxtField.text != "" && descriptionTxtField.text != "" && fromAddressTextField.text != "" && toAddressTextField.text != "" {
             DataService.instance.getIDs(forUsernames: choosenUserArray) { (idsArray) in
                 var userIds = idsArray
                 userIds.append((Auth.auth().currentUser?.uid)!)
                 
-                DataService.instance.createOrder(withNumber: self.numberTxtField.text!, andDescription: self.descriptionTxtField.text!, forUserIDs: userIds, handler: { (orderCreated) in
+                DataService.instance.createOrder(withNumber: self.numberTxtField.text!, andDescription: self.descriptionTxtField.text!, forUserIDs: userIds, fromAddress: self.fromAddressTextField.text!, toAddress: self.toAddressTextField.text!, handler: { (orderCreated) in
                     if orderCreated {
                         self.dismiss(animated: true, completion: nil)
                     } else {
