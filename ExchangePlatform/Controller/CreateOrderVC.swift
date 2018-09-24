@@ -20,6 +20,8 @@ class CreateOrderVC: UIViewController {
     @IBOutlet weak var orderMemberLbl: UILabel!
     @IBOutlet weak var fromAddressTextField: InsetTextField!
     @IBOutlet weak var toAddressTextField: InsetTextField!
+    @IBOutlet weak var typeOfCargoTextField: InsetTextField!
+    @IBOutlet weak var orderPriceTextField: InsetTextField!
     
     var emailArray = [String]()
     var choosenUserArray = [String]()
@@ -57,7 +59,7 @@ class CreateOrderVC: UIViewController {
                 var userIds = idsArray
                 userIds.append((Auth.auth().currentUser?.uid)!)
                 
-                DataService.instance.createOrder(withNumber: self.numberTxtField.text!, andDescription: self.descriptionTxtField.text!, forUserIDs: userIds, fromAddress: self.fromAddressTextField.text!, toAddress: self.toAddressTextField.text!, handler: { (orderCreated) in
+                DataService.instance.createOrder(withNumber: self.numberTxtField.text!, andDescription: self.descriptionTxtField.text!, orderPrice: self.orderPriceTextField.text!, typeOfCargo: self.typeOfCargoTextField.text! , forUserIDs: userIds, fromAddress: self.fromAddressTextField.text!, toAddress: self.toAddressTextField.text!, handler: { (orderCreated) in
                     if orderCreated {
                         self.dismiss(animated: true, completion: nil)
                     } else {

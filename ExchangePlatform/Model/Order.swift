@@ -11,7 +11,9 @@ import Foundation
 class Order {
     
     private var _orderNumber: String
+    private var _orderPrice: String
     private var _description: String
+    private var _typeOfCargo: String
     private var _key: String
     private var _memberCount: Int
     private var _members: [String]
@@ -47,8 +49,15 @@ class Order {
         return _toAddress
     }
     
+    var orderPrice: String {
+        return _orderPrice
+    }
+    
+    var typeOfCargo: String {
+        return _typeOfCargo
+    }
 
-    init(number: String, description: String, key: String, members: [String], memberCount: Int, fromAddress: String, toAddress: String) {
+    init(number: String, description: String, orderPrice: String, typeOfCargo: String, key: String, members: [String], memberCount: Int, fromAddress: String, toAddress: String) {
         self._orderNumber = number
         self._description = description
         self._key = key
@@ -56,6 +65,8 @@ class Order {
         self._members = members
         self._fromAddress = fromAddress
         self._toAddress = toAddress
+        self._orderPrice = orderPrice
+        self._typeOfCargo = typeOfCargo
     }
     
 }

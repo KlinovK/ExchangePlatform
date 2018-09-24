@@ -142,8 +142,8 @@ class DataService {
             handler(idArray)
         }
     }
-    func createOrder(withNumber number: String, andDescription description: String, forUserIDs ids: [String], fromAddress: String, toAddress: String, handler: @escaping(_ orderCreated: Bool) -> ()){
-        REF_ORDERS.childByAutoId().updateChildValues(["number": number, "description": description, "ids": ids, "fromAddress": fromAddress, "toAddress": toAddress])
+    func createOrder(withNumber number: String, andDescription description: String, orderPrice price: String, typeOfCargo type: String, forUserIDs ids: [String], fromAddress: String, toAddress: String, handler: @escaping(_ orderCreated: Bool) -> ()){
+        REF_ORDERS.childByAutoId().updateChildValues(["number": number, "description": description, "orderPrice": price, "typeOfCargo": type,"ids": ids, "fromAddress": fromAddress, "toAddress": toAddress])
         handler(true)
     }
     
@@ -158,7 +158,9 @@ class DataService {
                     let description = order.childSnapshot(forPath: "description").value as! String
                     let fromAddress = order.childSnapshot(forPath: "fromAddress").value as! String
                     let toAddress = order.childSnapshot(forPath: "toAddress").value as! String
-                    let order = Order(number: number, description: description, key: order.key, members: memberArray, memberCount: memberArray.count, fromAddress: fromAddress, toAddress: toAddress )
+                    let orderPrice = order.childSnapshot(forPath: "orderPrice").value as! String
+                    let typeOfCargo = order.childSnapshot(forPath: "typeOfCargo").value as! String
+                    let order = Order(number: number, description: description, orderPrice: orderPrice, typeOfCargo: typeOfCargo, key: order.key, members: memberArray, memberCount: memberArray.count, fromAddress: fromAddress, toAddress: toAddress )
                     ordersArray.append(order)
                 }
                 
