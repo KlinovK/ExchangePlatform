@@ -36,7 +36,7 @@ class OrderFeedVC: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        orderNumberLbl.text = order?.orderTitle
+        orderNumberLbl.text = order?.ordernNumber
         DataService.instance.getEmailFor(order: order!) { (returnedEmails) in
             self.membersLbl.text = returnedEmails.joined(separator: ", ")
 

@@ -19,7 +19,7 @@ class OrderCell: UITableViewCell {
     func configureCell(number: String, description: String, memberCount: Int, addressFrom: String, addressTo: String) {
         self.orderNumberLbl.text = number
         self.orderDescriptionLbl.text = description
-        self.memberCountLbl.text = "\(memberCount)"
+        self.memberCountLbl.text = "Members: \(memberCount)"
         self.addressFrom.text = addressFrom
         self.addressTo.text = addressTo
     }

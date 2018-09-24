@@ -19,7 +19,7 @@ class Order {
     private var _toAddress: String
 
 
-    var orderTitle: String {
+    var ordernNumber: String {
         return _orderNumber
     }
     
