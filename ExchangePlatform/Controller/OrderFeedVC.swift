@@ -13,11 +13,17 @@ class OrderFeedVC: UIViewController {
 
     @IBOutlet weak var orderNumberLbl: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var sendBtnView: UIView!
     @IBOutlet weak var sendBtn: UIButton!
     @IBOutlet weak var messageTxtField: InsetTextField!
     @IBOutlet weak var membersLbl: UILabel!
+    @IBOutlet weak var orderPriceLbl: UILabel!
+    @IBOutlet weak var addressFromLbl: UILabel!
+    @IBOutlet weak var addressToLbl: UILabel!
+    @IBOutlet weak var descriptionLbl: UILabel!
+    @IBOutlet weak var cargoTypeLbl: UILabel!
+    @IBOutlet weak var secondOrderNumberLbl: UILabel!
+    
     
     var order: Order?
     var orderMessages = [Message]()
@@ -37,6 +43,12 @@ class OrderFeedVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         orderNumberLbl.text = order?.ordernNumber
+        secondOrderNumberLbl.text = order?.ordernNumber
+        orderPriceLbl.text = order?.orderPrice
+        addressFromLbl.text = order?.fromAddress
+        addressToLbl.text = order?.toAddress
+        descriptionLbl.text = order?.description
+        cargoTypeLbl.text = order?.typeOfCargo
         DataService.instance.getEmailFor(order: order!) { (returnedEmails) in
             self.membersLbl.text = returnedEmails.joined(separator: ", ")
 

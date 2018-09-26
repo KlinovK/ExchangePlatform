@@ -18,7 +18,6 @@ class OrderCell: UITableViewCell {
     @IBOutlet weak var orderPrice: UILabel!
     @IBOutlet weak var typeOfCargoLbl: UILabel!
     
-    
     func configureCell(number: String, orderPrice: String, typeOfCargo:String, description: String, memberCount: Int, addressFrom: String, addressTo: String) {
         self.orderNumberLbl.text = "Number: \(number)"
         self.orderDescriptionLbl.text = "Description: \(description)"
