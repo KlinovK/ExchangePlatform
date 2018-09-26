@@ -51,7 +51,7 @@ extension OrdersVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let orderFeedVC = storyboard?.instantiateViewController(withIdentifier: "OrderFeedVC") as? OrderFeedVC else {return}
+        guard let orderFeedVC = storyboard?.instantiateViewController(withIdentifier: "OrderFeedVC") as? OrderProfileAndFeedVC else {return}
         orderFeedVC.initData(forOrder: ordersArray[indexPath.row])
         presentDetail(orderFeedVC)
     }

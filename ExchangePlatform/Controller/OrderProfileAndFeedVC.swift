@@ -9,8 +9,9 @@
 import UIKit
 import Firebase
 
-class OrderFeedVC: UIViewController {
+class OrderProfileAndFeedVC: UIViewController {
 
+    
     @IBOutlet weak var orderNumberLbl: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sendBtnView: UIView!
@@ -87,7 +88,7 @@ class OrderFeedVC: UIViewController {
     
 }
 
-extension OrderFeedVC: UITableViewDelegate, UITableViewDataSource {
+extension OrderProfileAndFeedVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

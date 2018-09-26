@@ -22,13 +22,11 @@ class SignUpVC: UIViewController {
 
         emailLbl.delegate = self
         passwordLbl.delegate = self
-        
     }
     
     
     @IBAction func signUpBtnWasPressed(_ sender: Any) {
-        if emailLbl.text != nil &&
-            passwordLbl.text != nil {
+        if emailLbl.text != nil && passwordLbl.text != nil {
                         AuthService.instance.registerUser(withEmail: self.emailLbl.text!, andPassword: self.passwordLbl.text!, userCreationComplete: { (success, registrationError) in
                             if success {
                                 AuthService.instance.loginUser(withEmail: self.emailLbl.text!, andPassword: self.passwordLbl.text!, userLoginComplete: { (success, nil) in

@@ -595,6 +595,7 @@ NS_SWIFT_NAME(Auth)
  */
 - (void)createUserWithEmail:(NSString *)email
                    password:(NSString *)password
+
                  completion:(nullable FIRAuthDataResultCallback)completion;
 
 /** @fn createUserAndRetrieveDataWithEmail:password:completion:
