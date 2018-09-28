@@ -16,6 +16,8 @@ class MeVC: UIViewController {
     @IBOutlet weak var myTableView: UITableView!
     
     var messageArray: [Message] = [Message]()
+    var ordersArray = [Order]()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +29,14 @@ class MeVC: UIViewController {
         super.viewWillAppear(animated)
         self.emailLbl.text = Auth.auth().currentUser?.email
         DataService.instance.getAllFeedMessages { (returnMessagesArray) in
-            self.messageArray = returnMessagesArray.reversed()
-            self.myTableView.reloadData()
+            DataService.instance.REF_ORDERS.observe(.value) { (snapshot) in
+            DataService.instance.getAllOrders { (returnedOrdersArray) in
+                self.ordersArray = returnedOrdersArray
+                self.myTableView.reloadData()
+            }
+            }
         }
+        
     }
     
     @IBAction func signOutBtnWasPressed(_ sender: Any) {
@@ -46,7 +53,6 @@ class MeVC: UIViewController {
         logoutPopup.addAction(logoutAction)
         present(logoutPopup, animated:  true, completion: nil)
     }
-
 }
 
 extension MeVC: UITableViewDelegate, UITableViewDataSource {
@@ -55,22 +61,13 @@ extension MeVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messageArray.count
+        return ordersArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "myFeedCell") as? MyTableCell else
-        {
-            return UITableViewCell()
-        }
-        
-        
-        let image = UIImage(named: "user")
-        let message = messageArray[indexPath.row]
-        
-        DataService.instance.getUserName(forUID: message.senderID) { (returnedUserName) in
-            cell.configureMyTableCell(profileImage: image!, email: returnedUserName, content: message.content)
-        }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "orderCell", for: indexPath) as? OrderCell  else {return UITableViewCell()}
+        let order = ordersArray[indexPath.row]
+        cell.configureCell(number: order.ordernNumber, orderPrice: order.orderPrice, typeOfCargo: order.typeOfCargo, description: order.description , memberCount: order.memberCount, addressFrom: order.fromAddress, addressTo:  order.toAddress)
         return cell
     }
 }

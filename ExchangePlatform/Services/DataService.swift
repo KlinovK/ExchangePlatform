@@ -21,6 +21,7 @@ class DataService {
     private var _REF_USERS = DB_BASE.child("users")
     private var _REF_ORDERS = DB_BASE.child("orders")
     private var _REF_FEED = DB_BASE.child("feed")
+    private var _REF_TENDERS = DB_BASE.child("tenders")
     
     var REF_BASE: DatabaseReference {
         return _REF_BASE
@@ -36,6 +37,10 @@ class DataService {
     
     var REF_FEED: DatabaseReference {
         return _REF_FEED
+    }
+    
+    var REF_TENDERS: DatabaseReference {
+        return _REF_TENDERS
     }
     
     
@@ -169,6 +174,32 @@ class DataService {
         }
     }
     
+    func createTender(withNumber number: String, andDescription description: String, tenderPrice price: String, typeOfCargo type: String, forUserIDs ids: [String], fromAddress: String, toAddress: String, handler: @escaping(_ tenderCreated: Bool) -> ()){
+        REF_TENDERS.childByAutoId().updateChildValues(["number": number, "description": description, "tenderPrice": price, "typeOfCargo": type,"ids": ids, "fromAddress": fromAddress, "toAddress": toAddress])
+        handler(true)
+    }
+    
+    func getAllTenders(handler: @escaping(_ tendersArray: [Tender]) -> ()){
+        var tendersArray = [Tender]()
+        REF_TENDERS.observeSingleEvent(of: .value) { (tenderSnapshot) in
+            guard let tenderSnapshot = tenderSnapshot.children.allObjects as? [DataSnapshot] else {return}
+            for tender in tenderSnapshot {
+                let memberArray = order.childSnapshot(forPath: "ids").value as! [String]
+                if memberArray.contains((Auth.auth().currentUser?.uid)!) {
+                    let number = order.childSnapshot(forPath: "number").value as! String
+                    let description = order.childSnapshot(forPath: "description").value as! String
+                    let fromAddress = order.childSnapshot(forPath: "fromAddress").value as! String
+                    let toAddress = order.childSnapshot(forPath: "toAddress").value as! String
+                    let orderPrice = order.childSnapshot(forPath: "orderPrice").value as! String
+                    let typeOfCargo = order.childSnapshot(forPath: "typeOfCargo").value as! String
+                    let order = Order(number: number, description: description, orderPrice: orderPrice, typeOfCargo: typeOfCargo, key: order.key, members: memberArray, memberCount: memberArray.count, fromAddress: fromAddress, toAddress: toAddress )
+                    ordersArray.append(order)
+                }
+                
+            }
+            handler(ordersArray)
+        }
+    }
     
 }
 

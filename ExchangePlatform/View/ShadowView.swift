@@ -29,8 +29,7 @@ class ShadowView: UIButton {
         let shadowPath = CGPath(ellipseIn: CGRect(x: contactShadowSize,
                                                   y: contactShadowSize * 6,
                                                   width: layer.bounds.width + contactShadowSize * 2,
-                                                  height: contactShadowSize),
-                                transform: nil)
+                                                  height: contactShadowSize), transform: nil)
         
         
         self.layer.shadowPath = shadowPath
