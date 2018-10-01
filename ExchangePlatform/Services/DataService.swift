@@ -43,8 +43,6 @@ class DataService {
         return _REF_TENDERS
     }
     
-    
-    
     func createDBUser(uid: String, userData: Dictionary<String, Any>){
         REF_USERS.child(uid).updateChildValues(userData)
     }
@@ -184,20 +182,18 @@ class DataService {
         REF_TENDERS.observeSingleEvent(of: .value) { (tenderSnapshot) in
             guard let tenderSnapshot = tenderSnapshot.children.allObjects as? [DataSnapshot] else {return}
             for tender in tenderSnapshot {
-                let memberArray = order.childSnapshot(forPath: "ids").value as! [String]
-                if memberArray.contains((Auth.auth().currentUser?.uid)!) {
-                    let number = order.childSnapshot(forPath: "number").value as! String
-                    let description = order.childSnapshot(forPath: "description").value as! String
-                    let fromAddress = order.childSnapshot(forPath: "fromAddress").value as! String
-                    let toAddress = order.childSnapshot(forPath: "toAddress").value as! String
-                    let orderPrice = order.childSnapshot(forPath: "orderPrice").value as! String
-                    let typeOfCargo = order.childSnapshot(forPath: "typeOfCargo").value as! String
-                    let order = Order(number: number, description: description, orderPrice: orderPrice, typeOfCargo: typeOfCargo, key: order.key, members: memberArray, memberCount: memberArray.count, fromAddress: fromAddress, toAddress: toAddress )
-                    ordersArray.append(order)
-                }
+                    let number = tender.childSnapshot(forPath: "number").value as! String
+                    let description = tender.childSnapshot(forPath: "description").value as! String
+                    let fromAddress = tender.childSnapshot(forPath: "fromAddress").value as! String
+                    let toAddress = tender.childSnapshot(forPath: "toAddress").value as! String
+                    let tenderPrice = tender.childSnapshot(forPath: "orderPrice").value as! String
+                    let typeOfCargo = tender.childSnapshot(forPath: "typeOfCargo").value as! String
+                    let tender = Tender(number: number, description: description, tenderPrice: tenderPrice, typeOfCargo: typeOfCargo, key: tender.key, fromAddress: fromAddress, toAddress: toAddress )
+                    tendersArray.append(tender)
+                
                 
             }
-            handler(ordersArray)
+            handler(tendersArray)
         }
     }
     

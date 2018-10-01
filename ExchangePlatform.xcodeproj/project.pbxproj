@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A95290A5215EA60300E7A30B /* Tender.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95290A4215EA60300E7A30B /* Tender.swift */; };
+		A95290A721629EF600E7A30B /* TenderProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95290A621629EF600E7A30B /* TenderProfileVC.swift */; };
+		A95290A921629F0C00E7A30B /* TendersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95290A821629F0C00E7A30B /* TendersVC.swift */; };
+		A95290AB21629F2000E7A30B /* CreateTenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95290AA21629F2000E7A30B /* CreateTenderVC.swift */; };
 		A996F72E2147EBDF008C0E20 /* MyTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A996F72D2147EBDF008C0E20 /* MyTableCell.swift */; };
 		A996F730214941D3008C0E20 /* CreateOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A996F72F214941D3008C0E20 /* CreateOrderVC.swift */; };
 		A996F73221494ECD008C0E20 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A996F73121494ECD008C0E20 /* UserCell.swift */; };
@@ -41,6 +44,9 @@
 		85B0B531CD8A84EE66C658D7 /* Pods-ExchangePlatform.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangePlatform.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangePlatform/Pods-ExchangePlatform.debug.xcconfig"; sourceTree = "<group>"; };
 		8BBBFEF2E8B131C8A1A29001 /* Pods-ExchangePlatform.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangePlatform.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangePlatform/Pods-ExchangePlatform.release.xcconfig"; sourceTree = "<group>"; };
 		A95290A4215EA60300E7A30B /* Tender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tender.swift; sourceTree = "<group>"; };
+		A95290A621629EF600E7A30B /* TenderProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenderProfileVC.swift; sourceTree = "<group>"; };
+		A95290A821629F0C00E7A30B /* TendersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TendersVC.swift; sourceTree = "<group>"; };
+		A95290AA21629F2000E7A30B /* CreateTenderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTenderVC.swift; sourceTree = "<group>"; };
 		A996F72D2147EBDF008C0E20 /* MyTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableCell.swift; sourceTree = "<group>"; };
 		A996F72F214941D3008C0E20 /* CreateOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderVC.swift; sourceTree = "<group>"; };
 		A996F73121494ECD008C0E20 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -148,6 +154,9 @@
 				A9C0DE4A21341ACF0024C21A /* OrdersVC.swift */,
 				A996F72F214941D3008C0E20 /* CreateOrderVC.swift */,
 				A996F739214D2481008C0E20 /* OrderProfileAndFeedVC.swift */,
+				A95290A621629EF600E7A30B /* TenderProfileVC.swift */,
+				A95290A821629F0C00E7A30B /* TendersVC.swift */,
+				A95290AA21629F2000E7A30B /* CreateTenderVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -228,6 +237,7 @@
 				TargetAttributes = {
 					A9C0DE4221341ACF0024C21A = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -314,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9C0DE72213EA13A0024C21A /* UIViewExt.swift in Sources */,
+				A95290A921629F0C00E7A30B /* TendersVC.swift in Sources */,
 				A9C0DE74213EB7650024C21A /* FeedCell.swift in Sources */,
 				A9C0DE4B21341ACF0024C21A /* OrdersVC.swift in Sources */,
 				A996F736214CFFFC008C0E20 /* Order.swift in Sources */,
@@ -333,8 +344,10 @@
 				A9C0DE70213E997C0024C21A /* CreatePostVC.swift in Sources */,
 				A9C0DE662135609B0024C21A /* SignUpVC.swift in Sources */,
 				A9C0DE68213560F10024C21A /* InsetTextField.swift in Sources */,
+				A95290A721629EF600E7A30B /* TenderProfileVC.swift in Sources */,
 				A9C0DE642135605C0024C21A /* SignInVC.swift in Sources */,
 				A996F738214D2407008C0E20 /* OrderFeedCell.swift in Sources */,
+				A95290AB21629F2000E7A30B /* CreateTenderVC.swift in Sources */,
 				A9C0DE76213EBC240024C21A /* Message.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,7 +502,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = KKi.ExchangePlatform;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -508,7 +521,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = KKi.ExchangePlatform;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
