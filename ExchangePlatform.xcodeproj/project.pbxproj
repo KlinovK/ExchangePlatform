@@ -37,6 +37,8 @@
 		A9C0DE72213EA13A0024C21A /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0DE71213EA13A0024C21A /* UIViewExt.swift */; };
 		A9C0DE74213EB7650024C21A /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0DE73213EB7650024C21A /* FeedCell.swift */; };
 		A9C0DE76213EBC240024C21A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0DE75213EBC240024C21A /* Message.swift */; };
+		A9EAD9FD2163D77600E75656 /* TenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EAD9FC2163D77600E75656 /* TenderCell.swift */; };
+		A9EAD9FF2165589400E75656 /* TenderFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EAD9FE2165589400E75656 /* TenderFeedCell.swift */; };
 		D7EAB019BEA1462562139A80 /* Pods_ExchangePlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62D9CD68AB6CC6A9A693F63 /* Pods_ExchangePlatform.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,8 @@
 		A9C0DE71213EA13A0024C21A /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		A9C0DE73213EB7650024C21A /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		A9C0DE75213EBC240024C21A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		A9EAD9FC2163D77600E75656 /* TenderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenderCell.swift; sourceTree = "<group>"; };
+		A9EAD9FE2165589400E75656 /* TenderFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenderFeedCell.swift; sourceTree = "<group>"; };
 		B62D9CD68AB6CC6A9A693F63 /* Pods_ExchangePlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExchangePlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -171,6 +175,8 @@
 				A996F73121494ECD008C0E20 /* UserCell.swift */,
 				A996F733214CE45D008C0E20 /* OrderCell.swift */,
 				A996F737214D2407008C0E20 /* OrderFeedCell.swift */,
+				A9EAD9FC2163D77600E75656 /* TenderCell.swift */,
+				A9EAD9FE2165589400E75656 /* TenderFeedCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -324,12 +330,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9C0DE72213EA13A0024C21A /* UIViewExt.swift in Sources */,
+				A9EAD9FF2165589400E75656 /* TenderFeedCell.swift in Sources */,
 				A95290A921629F0C00E7A30B /* TendersVC.swift in Sources */,
 				A9C0DE74213EB7650024C21A /* FeedCell.swift in Sources */,
 				A9C0DE4B21341ACF0024C21A /* OrdersVC.swift in Sources */,
 				A996F736214CFFFC008C0E20 /* Order.swift in Sources */,
 				A9C0DE6E213AAF120024C21A /* MeVC.swift in Sources */,
 				A996F734214CE45D008C0E20 /* OrderCell.swift in Sources */,
+				A9EAD9FD2163D77600E75656 /* TenderCell.swift in Sources */,
 				A996F73221494ECD008C0E20 /* UserCell.swift in Sources */,
 				A9C0DE4721341ACF0024C21A /* AppDelegate.swift in Sources */,
 				A9C0DE4921341ACF0024C21A /* FeedVC.swift in Sources */,

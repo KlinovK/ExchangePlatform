@@ -172,8 +172,8 @@ class DataService {
         }
     }
     
-    func createTender(withNumber number: String, andDescription description: String, tenderPrice price: String, typeOfCargo type: String, forUserIDs ids: [String], fromAddress: String, toAddress: String, handler: @escaping(_ tenderCreated: Bool) -> ()){
-        REF_TENDERS.childByAutoId().updateChildValues(["number": number, "description": description, "tenderPrice": price, "typeOfCargo": type,"ids": ids, "fromAddress": fromAddress, "toAddress": toAddress])
+    func createTender(withNumber number: String, andDescription description: String, tenderPrice price: String, typeOfCargo type: String, fromAddress: String, toAddress: String, handler: @escaping(_ tenderCreated: Bool) -> ()){
+        REF_TENDERS.childByAutoId().updateChildValues(["number": number, "description": description, "tenderPrice": price, "typeOfCargo": type, "fromAddress": fromAddress, "toAddress": toAddress])
         handler(true)
     }
     
@@ -186,7 +186,7 @@ class DataService {
                     let description = tender.childSnapshot(forPath: "description").value as! String
                     let fromAddress = tender.childSnapshot(forPath: "fromAddress").value as! String
                     let toAddress = tender.childSnapshot(forPath: "toAddress").value as! String
-                    let tenderPrice = tender.childSnapshot(forPath: "orderPrice").value as! String
+                    let tenderPrice = tender.childSnapshot(forPath: "tenderPrice").value as! String
                     let typeOfCargo = tender.childSnapshot(forPath: "typeOfCargo").value as! String
                     let tender = Tender(number: number, description: description, tenderPrice: tenderPrice, typeOfCargo: typeOfCargo, key: tender.key, fromAddress: fromAddress, toAddress: toAddress )
                     tendersArray.append(tender)

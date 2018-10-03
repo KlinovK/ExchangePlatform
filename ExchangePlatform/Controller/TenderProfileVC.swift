@@ -10,6 +10,13 @@ import UIKit
 
 class TenderProfileVC: UIViewController {
 
+    var tender: Tender?
+    var tenderMessages = [Message]()
+    
+    func initData(forTender tender: Tender){
+        self.tender = tender
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,4 +25,23 @@ class TenderProfileVC: UIViewController {
     
 
 
+}
+
+
+extension TenderProfileVC: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tenderMessages.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "tenderFeedCell", for: indexPath) as? TenderFeedCell else {return UITableViewCell()}
+        let message = tenderMessages[indexPath.row]
+//        DataService.instance.getUserName(forUID: message.senderID) { (email) in
+//            cell.configureCell(profileImage: UIImage(named:"user")!, email: email, content: message.content)
+//            
+//        }
+        return cell
+    }
 }
