@@ -1545,6 +1545,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="53"/>
                                         <state key="normal" title="&lt;"/>
+                                        <connections>
+                                            <action selector="backBtnWasPressed:" destination="qRl-8Y-xFJ" eventType="touchUpInside" id="lYx-7B-nkc"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.1137254902" green="0.3803921569" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1727,6 +1730,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.31764705882352939" green="0.64313725490196072" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="messageLbl" destination="Xag-HE-uLE" id="tK5-My-fp7"/>
+                                            <outlet property="senderEmailLbl" destination="t55-nd-wU0" id="o3f-iF-5l6"/>
+                                            <outlet property="senderImage" destination="b1e-eF-PeE" id="WXb-Y5-I1I"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -1747,6 +1755,9 @@
                                                 <color key="backgroundColor" red="0.1137254902" green="0.3803921569" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                 <state key="normal" title="SEND"/>
+                                                <connections>
+                                                    <action selector="sendBtnWasPressed:" destination="qRl-8Y-xFJ" eventType="touchUpInside" id="OAb-lB-GbI"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -1779,6 +1790,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Muq-qc-EwH"/>
                     </view>
+                    <connections>
+                        <outlet property="cargoTypeLbl" destination="Jo5-0X-aft" id="08l-n3-iXb"/>
+                        <outlet property="descriptionLbl" destination="lKc-Jo-mQo" id="zdk-jW-Llf"/>
+                        <outlet property="firstTenderNumberLbl" destination="RgM-P9-EmR" id="ggD-3F-W0h"/>
+                        <outlet property="fromLbl" destination="gB8-EU-9TW" id="DLo-N7-6tX"/>
+                        <outlet property="messageTextFieldLbl" destination="KLj-gJ-icE" id="6R4-Il-DE6"/>
+                        <outlet property="secondTenderNumberLbl" destination="4We-Ih-dc9" id="rhP-pn-kes"/>
+                        <outlet property="sendBtn" destination="5tM-LQ-vTi" id="Ae5-vK-FXG"/>
+                        <outlet property="sendBtnView" destination="Slt-pq-WMh" id="znq-ka-WAW"/>
+                        <outlet property="tableView" destination="kUb-k8-Ghg" id="wxS-84-Tyd"/>
+                        <outlet property="tenderPriceLbl" destination="DhL-81-Pqd" id="nZx-Xz-YxP"/>
+                        <outlet property="toLbl" destination="Svg-yg-maJ" id="NbS-Ct-imB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qlB-y4-k4H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

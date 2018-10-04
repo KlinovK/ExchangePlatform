@@ -104,16 +104,16 @@ class DataService {
     }
     
     func getAllMessagesFor(desiredOrder: Order, handler: @escaping(_ messagesArray: [Message]) -> ()){
-        var groupMessageArray = [Message]()
+        var orderMessageArray = [Message]()
         REF_ORDERS.child(desiredOrder.key).child("messages").observeSingleEvent(of: .value) { (orderMessageSnapshot) in
             guard let orderMessageSnapshot = orderMessageSnapshot.children.allObjects as? [DataSnapshot] else {return}
             for orderMessage in orderMessageSnapshot {
                 let content = orderMessage.childSnapshot(forPath: "content").value as! String
                 let senderID = orderMessage.childSnapshot(forPath: "senderID").value as! String
                 let message = Message(content: content, senderID: senderID)
-                groupMessageArray.append(message)
+                orderMessageArray.append(message)
             }
-            handler(groupMessageArray)
+            handler(orderMessageArray)
         }
     }
     
@@ -196,6 +196,21 @@ class DataService {
             handler(tendersArray)
         }
     }
+    
+    func getAllMessagesFor(desiredTender: Tender, handler: @escaping(_ messagesArray: [Message]) -> ()){
+        var tenderMessageArray = [Message]()
+        REF_TENDERS.child(desiredTender.key).child("messages").observeSingleEvent(of: .value) { (tenderMessageSnapshot) in
+            guard let tenderMessageSnapshot = tenderMessageSnapshot.children.allObjects as? [DataSnapshot] else {return}
+            for tenderMessage in tenderMessageSnapshot {
+                let content = tenderMessage.childSnapshot(forPath: "content").value as! String
+                let senderID = tenderMessage.childSnapshot(forPath: "senderID").value as! String
+                let message = Message(content: content, senderID: senderID)
+                tenderMessageArray.append(message)
+            }
+            handler(tenderMessageArray)
+        }
+    }
+    
     
 }
 
