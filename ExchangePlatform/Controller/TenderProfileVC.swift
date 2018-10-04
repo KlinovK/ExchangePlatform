@@ -56,7 +56,7 @@ class TenderProfileVC: UIViewController {
             DataService.instance.getAllMessagesFor(desiredTender: self.tender!, handler: { (returnedTenderMessages) in
                 self.tenderMessages = returnedTenderMessages
                 self.tableView.reloadData()
-    })
+            })
         }
 }
         
@@ -72,7 +72,7 @@ class TenderProfileVC: UIViewController {
         if messageTextFieldLbl.text != "" {
             messageTextFieldLbl.isEnabled = false
             sendBtn.isEnabled = false
-            DataService.instance.uploadPost(withMessage: messageTextFieldLbl.text!, forUID: (Auth.auth().currentUser?.uid)!, withOrderKey: tender?.key) { (complete) in
+            DataService.instance.uploadPostForTender(withMessage: messageTextFieldLbl.text!, forUID: (Auth.auth().currentUser?.uid)!, withTenderKey: tender?.key) { (complete) in
                 if complete {
                     self.messageTextFieldLbl.text = ""
                     self.messageTextFieldLbl.isEnabled = true

@@ -28,13 +28,11 @@ class MeVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.emailLbl.text = Auth.auth().currentUser?.email
+        
         DataService.instance.getAllFeedMessages { (returnMessagesArray) in
-            DataService.instance.REF_ORDERS.observe(.value) { (snapshot) in
-            DataService.instance.getAllOrders { (returnedOrdersArray) in
-                self.ordersArray = returnedOrdersArray
-                self.myTableView.reloadData()
-            }
-            }
+            self.messageArray = returnMessagesArray.reversed()
+            self.myTableView.reloadData()
+        
         }
         
     }
@@ -61,13 +59,18 @@ extension MeVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ordersArray.count
+        return messageArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "orderCell", for: indexPath) as? OrderCell  else {return UITableViewCell()}
-        let order = ordersArray[indexPath.row]
-        cell.configureCell(number: order.ordernNumber, orderPrice: order.orderPrice, typeOfCargo: order.typeOfCargo, description: order.description , memberCount: order.memberCount, addressFrom: order.fromAddress, addressTo:  order.toAddress)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "myFeedCell", for: indexPath) as? MyTableCell  else {return UITableViewCell()}
+        let image = UIImage(named: "user")
+        let message = messageArray[indexPath.row]
+        DataService.instance.getUserName(forUID: message.senderID) { (returnedUserName) in
+
+        cell.configureMyTableCell(profileImage: image!, email: returnedUserName, content: message.content)
+        }
         return cell
+            
     }
 }

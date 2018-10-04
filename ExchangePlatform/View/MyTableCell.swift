@@ -20,9 +20,7 @@ class MyTableCell: UITableViewCell {
         self.myTableCellMessageLbl.text = content
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+ 
 
 
 

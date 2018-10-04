@@ -86,6 +86,16 @@ class DataService {
         }
     }
     
+    func uploadPostForTender(withMessage message: String, forUID uid: String, withTenderKey tenderKey: String?, sendComlete: @escaping(_ status: Bool) -> ()) {
+        if tenderKey != nil {
+            REF_TENDERS.child(tenderKey!).child("messages").childByAutoId().updateChildValues(["content": message, "senderID": uid])
+            sendComlete(true)
+        } else {
+            REF_FEED.childByAutoId().updateChildValues(["content": message, "senderID": uid])
+            sendComlete(true)
+        }
+    }
+    
     // Get all messages from feed 
     
     func getAllFeedMessages(handler: @escaping (_ messages: [Message]) -> ()){
