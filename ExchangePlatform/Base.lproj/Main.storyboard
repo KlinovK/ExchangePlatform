@@ -1367,11 +1367,92 @@
                         <segue destination="lMY-uy-2LF" kind="relationship" relationship="viewControllers" id="iHc-rh-G48"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="6ql-kL-2OG" kind="relationship" relationship="viewControllers" id="KMm-PF-r1S"/>
+                        <segue destination="7x3-kn-87Q" kind="relationship" relationship="viewControllers" id="0sf-XA-vXx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-268" y="-1288"/>
+        </scene>
+        <!--Calculator-->
+        <scene sceneID="msu-iT-Ofl">
+            <objects>
+                <viewController id="7x3-kn-87Q" customClass="DistanceAndPriceCalculator" customModule="ExchangePlatform" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s8e-xK-ZoT">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KiE-1y-TP3">
+                                <rect key="frame" x="267" y="100" width="300" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="o6w-VA-aGw"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="syB-iI-iCZ"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Per km"/>
+                                    <segment title="Per transportation"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentControlWasPressed:" destination="7x3-kn-87Q" eventType="valueChanged" id="Dog-mj-Rwg"/>
+                                </connections>
+                            </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="nJ4-KE-2Ie">
+                                <rect key="frame" x="15" y="230" width="804" height="60"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter your price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I28-Z3-PL3" customClass="InsetTextField" customModule="ExchangePlatform" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="470.5" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Gea-t8-Vx0"/>
+                                            <constraint firstAttribute="height" constant="60" id="Z9B-dk-k6u"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="35"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="per km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2B-bQ-jat">
+                                        <rect key="frame" x="485.5" y="0.0" width="93.5" height="60"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LyV-QQ-YsZ">
+                                        <rect key="frame" x="594" y="0.0" width="210" height="60"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPe-kc-CgZ">
+                                <rect key="frame" x="423" y="360" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="calculateBtnWasPressed:" destination="7x3-kn-87Q" eventType="touchUpInside" id="lC5-5b-5p9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.31764705882352939" green="0.64313725490196072" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nJ4-KE-2Ie" firstAttribute="leading" secondItem="gFi-Fb-V79" secondAttribute="leading" constant="15" id="8OK-t7-K1s"/>
+                            <constraint firstItem="KiE-1y-TP3" firstAttribute="centerX" secondItem="s8e-xK-ZoT" secondAttribute="centerX" id="JZR-je-SAc"/>
+                            <constraint firstItem="gFi-Fb-V79" firstAttribute="trailing" secondItem="nJ4-KE-2Ie" secondAttribute="trailing" constant="15" id="WXF-SH-YcM"/>
+                            <constraint firstItem="KiE-1y-TP3" firstAttribute="top" secondItem="gFi-Fb-V79" secondAttribute="top" constant="80" id="WnH-nR-va7"/>
+                            <constraint firstItem="nJ4-KE-2Ie" firstAttribute="top" secondItem="KiE-1y-TP3" secondAttribute="bottom" constant="100" id="a7M-UE-7lk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gFi-Fb-V79"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Calculator" id="0sC-iy-srq"/>
+                    <connections>
+                        <outlet property="descLbl" destination="U2B-bQ-jat" id="l82-qf-r3e"/>
+                        <outlet property="priceTxTField" destination="I28-Z3-PL3" id="j4v-JN-M4L"/>
+                        <outlet property="resultLbl" destination="LyV-QQ-YsZ" id="LDy-Mc-CwD"/>
+                        <outlet property="segmentControl" destination="KiE-1y-TP3" id="dNy-Ep-SzS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QTp-xF-lLU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-268.34532374100723" y="-2207.3741007194244"/>
         </scene>
         <!--Tenders-->
         <scene sceneID="xWZ-T8-68H">

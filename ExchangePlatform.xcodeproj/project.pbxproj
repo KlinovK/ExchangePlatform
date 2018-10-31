@@ -39,6 +39,7 @@
 		A9C0DE76213EBC240024C21A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0DE75213EBC240024C21A /* Message.swift */; };
 		A9EAD9FD2163D77600E75656 /* TenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EAD9FC2163D77600E75656 /* TenderCell.swift */; };
 		A9EAD9FF2165589400E75656 /* TenderFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EAD9FE2165589400E75656 /* TenderFeedCell.swift */; };
+		A9EADA222189E4E300E75656 /* DistanceAndPriceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EADA212189E4E200E75656 /* DistanceAndPriceCalculator.swift */; };
 		D7EAB019BEA1462562139A80 /* Pods_ExchangePlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62D9CD68AB6CC6A9A693F63 /* Pods_ExchangePlatform.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		A9C0DE75213EBC240024C21A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		A9EAD9FC2163D77600E75656 /* TenderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenderCell.swift; sourceTree = "<group>"; };
 		A9EAD9FE2165589400E75656 /* TenderFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenderFeedCell.swift; sourceTree = "<group>"; };
+		A9EADA212189E4E200E75656 /* DistanceAndPriceCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceAndPriceCalculator.swift; sourceTree = "<group>"; };
 		B62D9CD68AB6CC6A9A693F63 /* Pods_ExchangePlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExchangePlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -161,6 +163,7 @@
 				A95290A621629EF600E7A30B /* TenderProfileVC.swift */,
 				A95290A821629F0C00E7A30B /* TendersVC.swift */,
 				A95290AA21629F2000E7A30B /* CreateTenderVC.swift */,
+				A9EADA212189E4E200E75656 /* DistanceAndPriceCalculator.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				A9C0DE6C21358FA20024C21A /* AuthService.swift in Sources */,
 				A996F730214941D3008C0E20 /* CreateOrderVC.swift in Sources */,
 				A996F73A214D2481008C0E20 /* OrderProfileAndFeedVC.swift in Sources */,
+				A9EADA222189E4E300E75656 /* DistanceAndPriceCalculator.swift in Sources */,
 				A996F73C214E27DE008C0E20 /* UIViewControllerExt.swift in Sources */,
 				A9C0DE62213463DB0024C21A /* DataService.swift in Sources */,
 				A996F72E2147EBDF008C0E20 /* MyTableCell.swift in Sources */,
