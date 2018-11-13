@@ -27,30 +27,12 @@ class CreateOrderVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tableView.delegate = self
-        tableView.dataSource = self
-        emailSearchTxtField.delegate = self
-        emailSearchTxtField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        doneBtn.isHidden = true
     }
     
-    @objc func textFieldDidChange(){
-        if emailSearchTxtField.text == "" {
-            emailArray = []
-            tableView.reloadData()
-        } else {
-            DataService.instance.getEmail(forSearchQuery: emailSearchTxtField.text!) { (returnedEmailArray) in
-                self.emailArray = returnedEmailArray
-                self.tableView.reloadData()
-            }
-        }
-    }
 
     @IBAction func doneBtnWasPressed(_ sender: Any) {
         if numberTxtField.text != "" && descriptionTxtField.text != "" && fromAddressTextField.text != "" && toAddressTextField.text != "" {
@@ -74,44 +56,7 @@ class CreateOrderVC: UIViewController {
     }
 }
 
-extension CreateOrderVC: UITableViewDelegate, UITableViewDataSource{
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return emailArray.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "userCell") as? UserCell else { return UITableViewCell() }
-        let profileImage = UIImage(named: "user")
-        if choosenUserArray.contains(emailArray[indexPath.row]) {
-            cell.configureCell(profileImage: profileImage!, email: emailArray[indexPath.row] , isSelected: true)
-        } else {
-            cell.configureCell(profileImage: profileImage!, email: emailArray[indexPath.row] , isSelected: false)
-        }
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let cell = tableView.cellForRow(at: indexPath) as? UserCell else { return }
-        if !choosenUserArray.contains(cell.emailLbl.text!) {
-            choosenUserArray.append(cell.emailLbl.text!)
-            doneBtn.isHidden = false
-        } else {
-            choosenUserArray = choosenUserArray.filter({ $0 != cell.emailLbl.text! })
-            if choosenUserArray.count >= 1 {
-            } else {
-                doneBtn.isHidden = true
-            }
-        }
-    }
-    
-    
-}
+
 
 extension CreateOrderVC: UITextFieldDelegate {
     

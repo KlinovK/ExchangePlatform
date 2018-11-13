@@ -921,6 +921,9 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="O4f-in-r0a"/>
+                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="dPi-J8-AEI">
                                         <rect key="frame" x="0.0" y="98" width="794" height="40"/>
@@ -966,6 +969,9 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="QxG-dm-yhe"/>
+                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="O2M-hO-jwi">
                                         <rect key="frame" x="0.0" y="196" width="794" height="40"/>
@@ -1011,6 +1017,9 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="vQn-aO-hCC"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -1019,7 +1028,6 @@
                         <constraints>
                             <constraint firstItem="RKS-aI-JXY" firstAttribute="top" secondItem="tAO-gl-ebn" secondAttribute="top" id="Khh-fZ-bOZ"/>
                             <constraint firstItem="zRi-aP-RPG" firstAttribute="trailing" secondItem="tG8-jD-NRo" secondAttribute="trailing" constant="20" id="UaJ-ut-Zod"/>
-                            <constraint firstItem="zRi-aP-RPG" firstAttribute="bottom" secondItem="tG8-jD-NRo" secondAttribute="bottom" constant="20" id="a8C-Jy-7hK"/>
                             <constraint firstItem="RKS-aI-JXY" firstAttribute="leading" secondItem="zRi-aP-RPG" secondAttribute="leading" id="ck1-Ma-8M6"/>
                             <constraint firstItem="tG8-jD-NRo" firstAttribute="leading" secondItem="zRi-aP-RPG" secondAttribute="leading" constant="20" id="muQ-rV-Jib"/>
                             <constraint firstItem="tG8-jD-NRo" firstAttribute="top" secondItem="RKS-aI-JXY" secondAttribute="bottom" constant="20" id="yUe-nb-UQx"/>
@@ -1279,7 +1287,6 @@
                         <segue destination="lMY-uy-2LF" kind="relationship" relationship="viewControllers" id="iHc-rh-G48"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="6ql-kL-2OG" kind="relationship" relationship="viewControllers" id="KMm-PF-r1S"/>
-                        <segue destination="7x3-kn-87Q" kind="relationship" relationship="viewControllers" id="0sf-XA-vXx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
