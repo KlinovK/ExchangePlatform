@@ -60,20 +60,6 @@ class DataService {
         }
     }
     
-//    func getEmailFor(order: Order, handler: @escaping(_ emails: [String]) -> () ) {
-//        var emailArray = [String]()
-//        REF_USERS.observeSingleEvent(of: .value) { (userSnapshot) in
-//            guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else {return}
-//            for user in userSnapshot {
-//                if order.members.contains(user.key) {
-//                    let email = user.childSnapshot(forPath: "email").value as! String
-//                    emailArray.append(email)
-//                }
-//            }
-//            handler(emailArray)
-//        }
-//    }
-    
     //Upload post to Feed
     
     func uploadPost(withMessage message: String, forUID uid: String, withOrderKey orderKey: String?, sendComlete: @escaping(_ status: Bool) -> ()) {
@@ -102,7 +88,6 @@ class DataService {
         var messageArray = [Message]()
         REF_FEED.observeSingleEvent(of: .value) { (feedMessageSnapshot) in
             guard let feedMessageSnapshot = feedMessageSnapshot.children.allObjects as? [DataSnapshot] else { return}
-            
             for message in feedMessageSnapshot {
                 let content = message.childSnapshot(forPath: "content").value as! String
                 let senderID = message.childSnapshot(forPath: "senderID").value as! String
@@ -127,20 +112,20 @@ class DataService {
         }
     }
     
-    func getEmail(forSearchQuery query: String, handler: @escaping (_ emailArray: [String]) -> ()){
-        var emailArray = [String]()
-        REF_USERS.observe(.value) { (userSnapshot) in
-            guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else {return}
-            for user in userSnapshot {
-                let email = user.childSnapshot(forPath: "email").value as! String
-                
-                if email.contains(query) == true && email != Auth.auth().currentUser?.email {
-                    emailArray.append(email)
-                }
-            }
-            handler(emailArray)
-        }
-    }
+//    func getEmail(forSearchQuery query: String, handler: @escaping (_ emailArray: [String]) -> ()){
+//        var emailArray = [String]()
+//        REF_USERS.observe(.value) { (userSnapshot) in
+//            guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else {return}
+//            for user in userSnapshot {
+//                let email = user.childSnapshot(forPath: "email").value as! String
+//                
+//                if email.contains(query) == true && email != Auth.auth().currentUser?.email {
+//                    emailArray.append(email)
+//                }
+//            }
+//            handler(emailArray)
+//        }
+//    }
     
     func getIDs(forUsernames usernames: [String], handler: @escaping (_ uidArray: [String] ) -> ()){
         REF_USERS.observeSingleEvent(of: .value) { (userSnapshot) in
