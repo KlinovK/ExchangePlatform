@@ -50,14 +50,14 @@ class OrderProfileAndFeedVC: UIViewController {
         addressToLbl.text = order?.toAddress
         descriptionLbl.text = order?.description
         cargoTypeLbl.text = order?.typeOfCargo
-        DataService.instance.getEmailFor(order: order!) { (returnedEmails) in
-            self.membersLbl.text = returnedEmails.joined(separator: ", ")
-
-            
-            if self.orderMessages.count > 0 {
-                self.tableView.scrollToRow(at: IndexPath(row: self.orderMessages.count - 1, section: 0), at: .none, animated: true)
-            }
-        }
+//        DataService.instance.getEmailFor(order: order!) { (returnedEmails) in
+//            self.membersLbl.text = returnedEmails.joined(separator: ", ")
+//
+//            
+//            if self.orderMessages.count > 0 {
+//                self.tableView.scrollToRow(at: IndexPath(row: self.orderMessages.count - 1, section: 0), at: .none, animated: true)
+//            }
+//        }
         DataService.instance.REF_ORDERS.observe(.value) { (snapshot) in
             DataService.instance.getAllMessagesFor(desiredOrder: self.order!, handler: { (returnedOrderMessages) in
                 self.orderMessages = returnedOrderMessages

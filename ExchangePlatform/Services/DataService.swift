@@ -60,19 +60,19 @@ class DataService {
         }
     }
     
-    func getEmailFor(order: Order, handler: @escaping(_ emails: [String]) -> () ) {
-        var emailArray = [String]()
-        REF_USERS.observeSingleEvent(of: .value) { (userSnapshot) in
-            guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else {return}
-            for user in userSnapshot {
-                if order.members.contains(user.key) {
-                    let email = user.childSnapshot(forPath: "email").value as! String
-                    emailArray.append(email)
-                }
-            }
-            handler(emailArray)
-        }
-    }
+//    func getEmailFor(order: Order, handler: @escaping(_ emails: [String]) -> () ) {
+//        var emailArray = [String]()
+//        REF_USERS.observeSingleEvent(of: .value) { (userSnapshot) in
+//            guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else {return}
+//            for user in userSnapshot {
+//                if order.members.contains(user.key) {
+//                    let email = user.childSnapshot(forPath: "email").value as! String
+//                    emailArray.append(email)
+//                }
+//            }
+//            handler(emailArray)
+//        }
+//    }
     
     //Upload post to Feed
     
@@ -173,7 +173,7 @@ class DataService {
                     let toAddress = order.childSnapshot(forPath: "toAddress").value as! String
                     let orderPrice = order.childSnapshot(forPath: "orderPrice").value as! String
                     let typeOfCargo = order.childSnapshot(forPath: "typeOfCargo").value as! String
-                    let order = Order(number: number, description: description, orderPrice: orderPrice, typeOfCargo: typeOfCargo, key: order.key, members: memberArray, memberCount: memberArray.count, fromAddress: fromAddress, toAddress: toAddress )
+                    let order = Order(number: number, description: description, orderPrice: orderPrice, typeOfCargo: typeOfCargo, key: order.key, fromAddress: fromAddress, toAddress: toAddress )
                     ordersArray.append(order)
                 }
                 
@@ -200,8 +200,6 @@ class DataService {
                     let typeOfCargo = tender.childSnapshot(forPath: "typeOfCargo").value as! String
                     let tender = Tender(number: number, description: description, tenderPrice: tenderPrice, typeOfCargo: typeOfCargo, key: tender.key, fromAddress: fromAddress, toAddress: toAddress )
                     tendersArray.append(tender)
-                
-                
             }
             handler(tendersArray)
         }

@@ -25,7 +25,6 @@
 		A9C0DE4E21341ACF0024C21A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C0DE4C21341ACF0024C21A /* Main.storyboard */; };
 		A9C0DE5021341AD40024C21A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9C0DE4F21341AD40024C21A /* Assets.xcassets */; };
 		A9C0DE5321341AD40024C21A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C0DE5121341AD40024C21A /* LaunchScreen.storyboard */; };
-		A9C0DE602134617B0024C21A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9C0DE5F2134617B0024C21A /* GoogleService-Info.plist */; };
 		A9C0DE62213463DB0024C21A /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0DE61213463DB0024C21A /* DataService.swift */; };
 		A9C0DE642135605C0024C21A /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0DE632135605C0024C21A /* SignInVC.swift */; };
 		A9C0DE662135609B0024C21A /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0DE652135609B0024C21A /* SignUpVC.swift */; };
@@ -40,6 +39,7 @@
 		A9EAD9FD2163D77600E75656 /* TenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EAD9FC2163D77600E75656 /* TenderCell.swift */; };
 		A9EAD9FF2165589400E75656 /* TenderFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EAD9FE2165589400E75656 /* TenderFeedCell.swift */; };
 		A9EADA222189E4E300E75656 /* DistanceAndPriceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EADA212189E4E200E75656 /* DistanceAndPriceCalculator.swift */; };
+		A9EADA26219AD1A200E75656 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9EADA25219AD1A200E75656 /* GoogleService-Info.plist */; };
 		D7EAB019BEA1462562139A80 /* Pods_ExchangePlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62D9CD68AB6CC6A9A693F63 /* Pods_ExchangePlatform.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,7 +66,6 @@
 		A9C0DE4F21341AD40024C21A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9C0DE5221341AD40024C21A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9C0DE5421341AD40024C21A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A9C0DE5F2134617B0024C21A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A9C0DE61213463DB0024C21A /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		A9C0DE632135605C0024C21A /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		A9C0DE652135609B0024C21A /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
@@ -81,6 +80,7 @@
 		A9EAD9FC2163D77600E75656 /* TenderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenderCell.swift; sourceTree = "<group>"; };
 		A9EAD9FE2165589400E75656 /* TenderFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenderFeedCell.swift; sourceTree = "<group>"; };
 		A9EADA212189E4E200E75656 /* DistanceAndPriceCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceAndPriceCalculator.swift; sourceTree = "<group>"; };
+		A9EADA25219AD1A200E75656 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B62D9CD68AB6CC6A9A693F63 /* Pods_ExchangePlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExchangePlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -144,7 +144,7 @@
 				A9C0DE4F21341AD40024C21A /* Assets.xcassets */,
 				A9C0DE5121341AD40024C21A /* LaunchScreen.storyboard */,
 				A9C0DE5421341AD40024C21A /* Info.plist */,
-				A9C0DE5F2134617B0024C21A /* GoogleService-Info.plist */,
+				A9EADA25219AD1A200E75656 /* GoogleService-Info.plist */,
 			);
 			path = ExchangePlatform;
 			sourceTree = "<group>";
@@ -274,7 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9C0DE5321341AD40024C21A /* LaunchScreen.storyboard in Resources */,
-				A9C0DE602134617B0024C21A /* GoogleService-Info.plist in Resources */,
+				A9EADA26219AD1A200E75656 /* GoogleService-Info.plist in Resources */,
 				A9C0DE5021341AD40024C21A /* Assets.xcassets in Resources */,
 				A9C0DE4E21341ACF0024C21A /* Main.storyboard in Resources */,
 			);

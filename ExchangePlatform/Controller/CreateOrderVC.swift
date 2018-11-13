@@ -17,7 +17,6 @@ class CreateOrderVC: UIViewController {
     @IBOutlet weak var numberTxtField: InsetTextField!
     @IBOutlet weak var descriptionTxtField: InsetTextField!
     @IBOutlet weak var doneBtn: UIButton!
-    @IBOutlet weak var orderMemberLbl: UILabel!
     @IBOutlet weak var fromAddressTextField: InsetTextField!
     @IBOutlet weak var toAddressTextField: InsetTextField!
     @IBOutlet weak var typeOfCargoTextField: InsetTextField!
@@ -101,14 +100,11 @@ extension CreateOrderVC: UITableViewDelegate, UITableViewDataSource{
         guard let cell = tableView.cellForRow(at: indexPath) as? UserCell else { return }
         if !choosenUserArray.contains(cell.emailLbl.text!) {
             choosenUserArray.append(cell.emailLbl.text!)
-            orderMemberLbl.text = choosenUserArray.joined(separator: ", ")
             doneBtn.isHidden = false
         } else {
             choosenUserArray = choosenUserArray.filter({ $0 != cell.emailLbl.text! })
             if choosenUserArray.count >= 1 {
-                orderMemberLbl.text = choosenUserArray.joined(separator: ", ")
             } else {
-                orderMemberLbl.text = "add people to your order"
                 doneBtn.isHidden = true
             }
         }

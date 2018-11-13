@@ -45,7 +45,7 @@ extension OrdersVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "orderCell", for: indexPath) as? OrderCell  else {return UITableViewCell()}
         let order = ordersArray[indexPath.row]
-        cell.configureCell(number: order.ordernNumber, orderPrice: order.orderPrice, typeOfCargo: order.typeOfCargo, description: order.description , memberCount: order.memberCount, addressFrom: order.fromAddress, addressTo:  order.toAddress)
+        cell.configureCell(number: order.ordernNumber, orderPrice: order.orderPrice, typeOfCargo: order.typeOfCargo, description: order.description, addressFrom: order.fromAddress, addressTo:  order.toAddress)
         return cell
     }
     

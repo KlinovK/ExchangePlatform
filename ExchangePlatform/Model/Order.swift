@@ -15,8 +15,6 @@ class Order {
     private var _description: String
     private var _typeOfCargo: String
     private var _key: String
-    private var _memberCount: Int
-    private var _members: [String]
     private var _fromAddress: String
     private var _toAddress: String
 
@@ -31,14 +29,6 @@ class Order {
     
     var key: String {
         return _key
-    }
-    
-    var memberCount: Int {
-        return _memberCount
-    }
-    
-    var members: [String] {
-        return _members
     }
     
     var fromAddress: String {
@@ -57,12 +47,10 @@ class Order {
         return _typeOfCargo
     }
 
-    init(number: String, description: String, orderPrice: String, typeOfCargo: String, key: String, members: [String], memberCount: Int, fromAddress: String, toAddress: String) {
+    init(number: String, description: String, orderPrice: String, typeOfCargo: String, key: String, fromAddress: String, toAddress: String) {
         self._orderNumber = number
         self._description = description
         self._key = key
-        self._memberCount = memberCount
-        self._members = members
         self._fromAddress = fromAddress
         self._toAddress = toAddress
         self._orderPrice = orderPrice
