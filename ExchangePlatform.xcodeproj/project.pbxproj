@@ -38,8 +38,9 @@
 		A9C0DE76213EBC240024C21A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0DE75213EBC240024C21A /* Message.swift */; };
 		A9EAD9FD2163D77600E75656 /* TenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EAD9FC2163D77600E75656 /* TenderCell.swift */; };
 		A9EAD9FF2165589400E75656 /* TenderFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EAD9FE2165589400E75656 /* TenderFeedCell.swift */; };
-		A9EADA222189E4E300E75656 /* DistanceAndPriceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EADA212189E4E200E75656 /* DistanceAndPriceCalculator.swift */; };
+		A9EADA222189E4E300E75656 /* CalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EADA212189E4E200E75656 /* CalculatorVC.swift */; };
 		A9EADA26219AD1A200E75656 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9EADA25219AD1A200E75656 /* GoogleService-Info.plist */; };
+		A9EADA28219C586B00E75656 /* CalcModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EADA27219C586B00E75656 /* CalcModel.swift */; };
 		D7EAB019BEA1462562139A80 /* Pods_ExchangePlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62D9CD68AB6CC6A9A693F63 /* Pods_ExchangePlatform.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,8 +80,9 @@
 		A9C0DE75213EBC240024C21A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		A9EAD9FC2163D77600E75656 /* TenderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenderCell.swift; sourceTree = "<group>"; };
 		A9EAD9FE2165589400E75656 /* TenderFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenderFeedCell.swift; sourceTree = "<group>"; };
-		A9EADA212189E4E200E75656 /* DistanceAndPriceCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceAndPriceCalculator.swift; sourceTree = "<group>"; };
+		A9EADA212189E4E200E75656 /* CalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorVC.swift; sourceTree = "<group>"; };
 		A9EADA25219AD1A200E75656 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		A9EADA27219C586B00E75656 /* CalcModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcModel.swift; sourceTree = "<group>"; };
 		B62D9CD68AB6CC6A9A693F63 /* Pods_ExchangePlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExchangePlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -163,7 +165,7 @@
 				A95290A621629EF600E7A30B /* TenderProfileVC.swift */,
 				A95290A821629F0C00E7A30B /* TendersVC.swift */,
 				A95290AA21629F2000E7A30B /* CreateTenderVC.swift */,
-				A9EADA212189E4E200E75656 /* DistanceAndPriceCalculator.swift */,
+				A9EADA212189E4E200E75656 /* CalculatorVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -190,6 +192,7 @@
 				A9C0DE75213EBC240024C21A /* Message.swift */,
 				A996F735214CFFFC008C0E20 /* Order.swift */,
 				A95290A4215EA60300E7A30B /* Tender.swift */,
+				A9EADA27219C586B00E75656 /* CalcModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -347,7 +350,7 @@
 				A9C0DE6C21358FA20024C21A /* AuthService.swift in Sources */,
 				A996F730214941D3008C0E20 /* CreateOrderVC.swift in Sources */,
 				A996F73A214D2481008C0E20 /* OrderProfileAndFeedVC.swift in Sources */,
-				A9EADA222189E4E300E75656 /* DistanceAndPriceCalculator.swift in Sources */,
+				A9EADA222189E4E300E75656 /* CalculatorVC.swift in Sources */,
 				A996F73C214E27DE008C0E20 /* UIViewControllerExt.swift in Sources */,
 				A9C0DE62213463DB0024C21A /* DataService.swift in Sources */,
 				A996F72E2147EBDF008C0E20 /* MyTableCell.swift in Sources */,
@@ -356,6 +359,7 @@
 				A9C0DE70213E997C0024C21A /* CreatePostVC.swift in Sources */,
 				A9C0DE662135609B0024C21A /* SignUpVC.swift in Sources */,
 				A9C0DE68213560F10024C21A /* InsetTextField.swift in Sources */,
+				A9EADA28219C586B00E75656 /* CalcModel.swift in Sources */,
 				A95290A721629EF600E7A30B /* TenderProfileVC.swift in Sources */,
 				A9C0DE642135605C0024C21A /* SignInVC.swift in Sources */,
 				A996F738214D2407008C0E20 /* OrderFeedCell.swift in Sources */,

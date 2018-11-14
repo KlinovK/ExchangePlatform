@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DistanceAndPriceCalculator: UIViewController {
+class CalculatorVC: UIViewController {
 
     @IBOutlet weak var segmentControl: UISegmentedControl!
     
@@ -16,16 +16,25 @@ class DistanceAndPriceCalculator: UIViewController {
     @IBOutlet weak var descLbl: UILabel!
     @IBOutlet weak var priceTxTField: InsetTextField!
     
-    
+    var calcutate = CalcModel(distance: 0.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-      
-        
+        calculateResult()
+        updateUI()
     }
     
-
+    func calculateResult(){
+        calcutate.distance = ((priceTxTField.text)! as NSString).doubleValue
+        calcutate.calculateResult()
+    }
+    
+    func updateUI(){
+        resultLbl.text = String(format: "$%0.2f", calcutate.result)
+    }
+    
+    
     @IBAction func segmentControlWasPressed(_ sender: Any) {
         switch segmentControl.selectedSegmentIndex {
         case 0:
@@ -38,9 +47,8 @@ class DistanceAndPriceCalculator: UIViewController {
     }
     
     @IBAction func calculateBtnWasPressed(_ sender: Any) {
-        if segmentControl.selectedSegmentIndex == 0 {
-  //          resultLbl.text = ((priceTxTField.text)! as NSString).doubleValue * 2
-        }
+        calculateResult()
+        updateUI()
     }
     
 }
