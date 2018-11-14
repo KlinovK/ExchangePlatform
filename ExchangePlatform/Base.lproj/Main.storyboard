@@ -1373,7 +1373,7 @@
                     <tabBarItem key="tabBarItem" title="Calculator" image="calculator (1)" landscapeImage="calculator (1)" selectedImage="calculator (1)" id="0sC-iy-srq"/>
                     <connections>
                         <outlet property="descLbl" destination="U2B-bQ-jat" id="l82-qf-r3e"/>
-                        <outlet property="priceTxTField" destination="I28-Z3-PL3" id="j4v-JN-M4L"/>
+                        <outlet property="distanceTxtField" destination="I28-Z3-PL3" id="j4v-JN-M4L"/>
                         <outlet property="resultLbl" destination="LyV-QQ-YsZ" id="LDy-Mc-CwD"/>
                         <outlet property="segmentControl" destination="KiE-1y-TP3" id="dNy-Ep-SzS"/>
                     </connections>

@@ -30,8 +30,12 @@ class CalcModel {
         self._distance = distance
     }
     
-    func calculateResult(){
+    func calculateResultPerKm(){
         _result = distance * 1.3
     }
 
+    func calculateResultPerTransportation(){
+        _result = distance * 1.5
+    }
+    
 }

@@ -14,20 +14,23 @@ class CalculatorVC: UIViewController {
     
     @IBOutlet weak var resultLbl: UILabel!
     @IBOutlet weak var descLbl: UILabel!
-    @IBOutlet weak var priceTxTField: InsetTextField!
+    @IBOutlet weak var distanceTxtField: InsetTextField!
     
     var calcutate = CalcModel(distance: 0.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        calculateResult()
         updateUI()
     }
     
-    func calculateResult(){
-        calcutate.distance = ((priceTxTField.text)! as NSString).doubleValue
-        calcutate.calculateResult()
+    func calculateResultpPerKm(){
+        calcutate.distance = ((distanceTxtField.text)! as NSString).doubleValue
+        calcutate.calculateResultPerKm()
+    }
+    
+    func calculateResultPerTransportation(){
+        calcutate.distance = ((distanceTxtField.text)! as NSString).doubleValue
+        calcutate.calculateResultPerTransportation()
     }
     
     func updateUI(){
@@ -47,8 +50,16 @@ class CalculatorVC: UIViewController {
     }
     
     @IBAction func calculateBtnWasPressed(_ sender: Any) {
-        calculateResult()
-        updateUI()
+        switch segmentControl.selectedSegmentIndex {
+            case 0:
+            calculateResultpPerKm()
+            updateUI();
+            case 1:
+            calculateResultPerTransportation()
+            updateUI();
+            default:
+            break
+        }
     }
     
 }
