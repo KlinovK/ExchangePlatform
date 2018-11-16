@@ -10,7 +10,9 @@ import Foundation
 
 class CalcModel {
     private var _distance: Double = 0
-    private var _result: Double = 0
+    private var _resultPerKM: Double = 0
+    private var _resultPerTransportation: Double = 0
+
 
 
     var distance: Double {
@@ -22,8 +24,12 @@ class CalcModel {
         }
     }
     
-    var result: Double {
-      return _result
+    var resultPerKM: Double {
+      return _resultPerKM
+    }
+    
+    var resultPerTransportation: Double {
+        return _resultPerTransportation
     }
     
     init(distance: Double) {
@@ -31,11 +37,11 @@ class CalcModel {
     }
     
     func calculateResultPerKm(){
-        _result = distance * 1.3
+        _resultPerKM = distance / 100
     }
 
     func calculateResultPerTransportation(){
-        _result = distance * 1.5
+        _resultPerTransportation = distance * 1
     }
     
 }

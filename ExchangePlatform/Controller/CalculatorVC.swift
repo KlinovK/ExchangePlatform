@@ -10,10 +10,9 @@ import UIKit
 
 class CalculatorVC: UIViewController {
 
-    @IBOutlet weak var segmentControl: UISegmentedControl!
-    
-    @IBOutlet weak var resultLbl: UILabel!
-    @IBOutlet weak var descLbl: UILabel!
+    @IBOutlet weak var CurrencySegmentControl: UISegmentedControl!
+    @IBOutlet weak var resultPerKMLbl: UILabel!
+    @IBOutlet weak var resultPerTransportation: UILabel!
     @IBOutlet weak var distanceTxtField: InsetTextField!
     
     var calcutate = CalcModel(distance: 0.0)
@@ -34,32 +33,39 @@ class CalculatorVC: UIViewController {
     }
     
     func updateUI(){
-        resultLbl.text = String(format: "$%0.2f", calcutate.result)
+        resultPerKMLbl.text = String(format: "$%0.2f", calcutate.resultPerKM)
+        resultPerTransportation.text = String(format: "$%0.2f", calcutate.resultPerTransportation)
     }
     
     
     @IBAction func segmentControlWasPressed(_ sender: Any) {
-        switch segmentControl.selectedSegmentIndex {
-        case 0:
-            descLbl.text = "Per km";
-        case 1:
-            descLbl.text = "Per transportation";
-        default:
-            break
-        }
+//        switch CurrencySegmentControl.selectedSegmentIndex {
+//        case 0:
+//            descLbl.text = "Per km";
+//        case 1:
+//            descLbl.text = "Per transportation";
+//        default:
+//            break
+//        }
     }
     
     @IBAction func calculateBtnWasPressed(_ sender: Any) {
-        switch segmentControl.selectedSegmentIndex {
-            case 0:
-            calculateResultpPerKm()
-            updateUI();
-            case 1:
-            calculateResultPerTransportation()
-            updateUI();
-            default:
-            break
-        }
-    }
+        calculateResultpPerKm()
+        calculateResultPerTransportation()
+        updateUI()
+        
+        
+//        switch CurrencySegmentControl.selectedSegmentIndex {
+//            case 0:
+//            calculateResultpPerKm()
+//            updateUI();
+//            case 1:
+//            calculateResultPerTransportation()
+//            updateUI();
+//            default:
+//            break
+//        }
+//    }
     
+    }
 }
