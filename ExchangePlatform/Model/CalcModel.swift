@@ -10,8 +10,10 @@ import Foundation
 
 class CalcModel {
     private var _distance: Double = 0
+    private var _price: Double = 0
     private var _resultPerKM: Double = 0
     private var _resultPerTransportation: Double = 0
+    
 
 
 
@@ -24,6 +26,15 @@ class CalcModel {
         }
     }
     
+    var price: Double {
+        get {
+            return _price
+        }
+        set {
+            _price = newValue
+        }
+    }
+    
     var resultPerKM: Double {
       return _resultPerKM
     }
@@ -32,16 +43,17 @@ class CalcModel {
         return _resultPerTransportation
     }
     
-    init(distance: Double) {
+    init(distance: Double, price: Double) {
         self._distance = distance
+        self._price = price
     }
     
     func calculateResultPerKm(){
-        _resultPerKM = distance / 100
+        _resultPerKM = price / distance
     }
 
     func calculateResultPerTransportation(){
-        _resultPerTransportation = distance * 1
+        _resultPerTransportation = price * distance
     }
     
 }

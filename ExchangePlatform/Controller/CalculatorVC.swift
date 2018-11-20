@@ -14,8 +14,9 @@ class CalculatorVC: UIViewController {
     @IBOutlet weak var resultPerKMLbl: UILabel!
     @IBOutlet weak var resultPerTransportation: UILabel!
     @IBOutlet weak var distanceTxtField: InsetTextField!
+    @IBOutlet weak var priceTxtField: InsetTextField!
     
-    var calcutate = CalcModel(distance: 0.0)
+    var calcutate = CalcModel(distance: 0.0, price: 0.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +25,13 @@ class CalculatorVC: UIViewController {
     
     func calculateResultpPerKm(){
         calcutate.distance = ((distanceTxtField.text)! as NSString).doubleValue
+        calcutate.price = ((priceTxtField.text)! as NSString).doubleValue
         calcutate.calculateResultPerKm()
     }
     
     func calculateResultPerTransportation(){
         calcutate.distance = ((distanceTxtField.text)! as NSString).doubleValue
+        calcutate.price = ((priceTxtField.text)! as NSString).doubleValue
         calcutate.calculateResultPerTransportation()
     }
     
