@@ -36,39 +36,35 @@ class CalculatorVC: UIViewController {
     }
     
     func updateUI(){
-        resultPerKMLbl.text = String(format: "$%0.2f", calcutate.resultPerKM)
-        resultPerTransportation.text = String(format: "$%0.2f", calcutate.resultPerTransportation)
+        switch CurrencySegmentControl.selectedSegmentIndex {
+        case 0:
+            resultPerKMLbl.text = String(format: "$%0.2f", calcutate.resultPerKM)
+            resultPerTransportation.text = String(format: "$%0.2f", calcutate.resultPerTransportation);
+        case 1:
+            resultPerKMLbl.text = String(format: "€%0.2f", calcutate.resultPerKM)
+            resultPerTransportation.text = String(format: "€%0.2f", calcutate.resultPerTransportation);
+        case 2:
+            resultPerKMLbl.text = String(format: "₿%0.2f", calcutate.resultPerKM)
+            resultPerTransportation.text = String(format: "₿%0.2f", calcutate.resultPerTransportation);
+        case 3:
+            resultPerKMLbl.text = String(format: "ETH%0.2f", calcutate.resultPerKM)
+            resultPerTransportation.text = String(format: "ETH%0.2f", calcutate.resultPerTransportation);
+        case 4:
+            resultPerKMLbl.text = String(format: "XRP%0.2f", calcutate.resultPerKM)
+            resultPerTransportation.text = String(format: "XRP%0.2f", calcutate.resultPerTransportation);
+        default:
+            break
+        }
     }
     
     
     @IBAction func segmentControlWasPressed(_ sender: Any) {
-//        switch CurrencySegmentControl.selectedSegmentIndex {
-//        case 0:
-//            descLbl.text = "Per km";
-//        case 1:
-//            descLbl.text = "Per transportation";
-//        default:
-//            break
-//        }
+        updateUI()
     }
     
     @IBAction func calculateBtnWasPressed(_ sender: Any) {
         calculateResultpPerKm()
         calculateResultPerTransportation()
         updateUI()
-        
-        
-//        switch CurrencySegmentControl.selectedSegmentIndex {
-//            case 0:
-//            calculateResultpPerKm()
-//            updateUI();
-//            case 1:
-//            calculateResultPerTransportation()
-//            updateUI();
-//            default:
-//            break
-//        }
-//    }
-    
     }
 }
